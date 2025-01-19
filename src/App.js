@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+
 import './App.css';
+import AboutUs from './components/AboutUs';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import LandingPage from './components/LandingPage';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop';
+import AutoTrendingNews from './components/AutoTrendingNews';
+import Hero2 from './components/Hero2';
+import ThemeSwitch from './components/ThemeSwitch';
+import CarShowroomPage2 from './components/CarShowRoomPage2';
+import ScrollAnimation from './components/scrollAnimation';
+import ContactUs from './components/ContactUs';
+import ServicesAndSupport from './components/ServicesAndSupport';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <ScrollToTop/>
+  <Header/>
+  <ScrollAnimation>
+  <Routes>
+      <Route path='/' element={<LandingPage/>}/>
+      <Route path='/aboutus' element={<AboutUs/>}/>
+      <Route path='/autotrendingnews' element={<AutoTrendingNews/>}/>
+     <Route path='/carshowroompage2' element={<CarShowroomPage2/>}/>
+     <Route path='/contactus' element={<ContactUs/>}/>
+     <Route path='/servicesandsupport' element={<ServicesAndSupport/>}/>
+    </Routes>
+  </ScrollAnimation>
+   
+    <ThemeSwitch/>
+    <Hero2/>
+    <Footer/>
+  </BrowserRouter>
+    
+    
   );
 }
 
