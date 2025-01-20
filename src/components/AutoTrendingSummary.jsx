@@ -184,6 +184,7 @@ import car21 from "../Images/car21.jpg";
 import car22 from "../Images/car22.jpg";
 import { useNavigate } from 'react-router-dom';
 import { Context } from './Context';
+import { useSelector } from 'react-redux';
 
 const fadeIn = keyframes`
   from {
@@ -244,7 +245,7 @@ const SlidingImages = styled.div`
   display: flex;
   position: absolute;
   width: 100%;
-  animation: ${slide} 100s linear infinite;
+  animation: ${slide} 50s linear infinite;
   flex-direction: column;
 `;
 
@@ -290,7 +291,8 @@ const Button = styled.a`
 `;
 
 const AutoTrendingSummary = () => {
-  const { theme } = useContext(Context);
+  // const { theme } = useContext(Context);
+  const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
 
   return (

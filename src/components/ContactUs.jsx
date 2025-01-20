@@ -9,6 +9,7 @@ import { Context } from './Context'; // Assuming you have a theme context
 import contactBackground from '../Images/car2.jpeg';
 import contactBackground2 from '../Images/car13.jpg';
 import carLogo from '../Images/carlogo.jpeg'
+import { useSelector } from 'react-redux';
 
 // Define theme colors for light and dark mode
 const lightTheme = {
@@ -134,7 +135,8 @@ const Img = styled.img`
 
 // Contact Form Component
 const ContactUs = () => {
-  const { theme } = useContext(Context); // Access theme context
+  // const { theme } = useContext(Context); // Access theme context
+  const theme = useSelector((state)=>state.theme)
   const [formData, setFormData] = useState({
     name: '',
     email: '',

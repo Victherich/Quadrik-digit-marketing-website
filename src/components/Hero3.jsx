@@ -34,6 +34,10 @@ const HeroContainer = styled.section`
   overflow: hidden;
   color: #ffffff;
 
+  @media (max-width:1280px){
+    height:250px;
+  }
+
 `;
 
 const HeroContent = styled.div`
@@ -43,6 +47,8 @@ const HeroContent = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 2;
+
+
 `;
 
 const HeroTitle = styled.h1`

@@ -1,12 +1,16 @@
 
+
 // // AutoTrendingNews.js
-// import React from 'react';
+// import React, { useState, useEffect, useContext } from 'react';
 // import styled, { keyframes } from 'styled-components';
 // import { FaCarSide, FaNewspaper, FaArrowRight } from 'react-icons/fa';
+// import { Context } from './Context'; // Assuming you have a theme context
 // import car1 from '../Images/car1.jpeg';
 // import car2 from '../Images/car2.jpeg';
 // import car3 from '../Images/car3.jpeg';
+// import Hero4 from './Hero4';
 
+// // Define animations
 // const fadeIn = keyframes`
 //   from {
 //     opacity: 0;
@@ -27,9 +31,11 @@
 //   }
 // `;
 
+// // Styled components
 // const Container = styled.div`
-//   background: linear-gradient(90deg, #0f172a, #1e293b);
-//   color: #ffffff;
+//   background: ${({ theme }) => 
+//     theme === 'dark' ? 'linear-gradient(90deg, #0f172a, #1e293b)' : 'linear-gradient(90deg, #f8fafc, #e2e8f0)'};
+//   color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
 //   font-family: Arial, sans-serif;
 // `;
 
@@ -41,7 +47,7 @@
 //   align-items: center;
 //   justify-content: center;
 //   overflow: hidden;
-//   background: #1e293b;
+//   background: ${({ theme }) => theme === 'dark' ? '#1e293b' : '#e2e8f0'};
 // `;
 
 // const HeroText = styled.h1`
@@ -109,15 +115,16 @@
 // `;
 
 // const ArticleTitle = styled.h2`
-//   font-size: 1.5rem;
+//   font-size: 1.1rem;
 //   font-weight: bold;
 //   margin-bottom: 1rem;
-//   color: #fbbf24;
+//   color: ${({ theme }) => (theme === 'dark' ? '#f4f4f4' : '#1e293b')};
 // `;
 
 // const ArticleText = styled.p`
-//   font-size: 1rem;
+//   font-size: 0.9rem;
 //   line-height: 1.5;
+//   font-style:italic;
 // `;
 
 // const Button = styled.a`
@@ -145,79 +152,61 @@
 // `;
 
 // const AutoTrendingNews = () => {
+//   const { theme } = useContext(Context); // Access theme context
+//   const [newsArticles, setNewsArticles] = useState([]);
+
+//   useEffect(() => {
+//     // Fetch Google News or any other news API (Example with NewsAPI)
+//     const fetchNews = async () => {
+//       const apiKey = '6391618f1cbe4c9488ea70a4b5973ba3'; // Replace with your actual API Key
+//       const url = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`;
+      
+//       try {
+//         const response = await fetch(url);
+//         const data = await response.json();
+//         setNewsArticles(data.articles); // Set the fetched articles
+//       } catch (error) {
+//         console.error('Error fetching news:', error);
+//       }
+//     };
+    
+//     fetchNews();
+//   }, []);
+
 //   return (
-//     <Container>
+//     <Container theme={theme === true ? 'light' : 'dark'}>
 //       {/* Hero Section */}
-//       <HeroSection>
+//       {/* <HeroSection theme={theme === 'dark' ? 'dark' : 'light'}>
 //         <HeroText>Auto Trending News</HeroText>
 //         <SlidingImages>
 //           <CarImage src={car1} alt="Car 1" />
 //           <CarImage src={car2} alt="Car 2" />
 //           <CarImage src={car3} alt="Car 3" />
 //         </SlidingImages>
-//       </HeroSection>
+//       </HeroSection> */}
+//       <Hero4/>
 
 //       {/* News Content */}
 //       <ContentSection>
 //         <Section>
-//           <Article>
-//             <IconWrapper>
-//               <FaNewspaper />
-//             </IconWrapper>
-//             <ArticleTitle>Electric Cars: Revolutionizing the Auto Industry</ArticleTitle>
-//             <ArticleText>
-//               The demand for electric vehicles is surging globally. With new advancements in
-//               battery technology, EVs are becoming more accessible and environmentally friendly.
-//               Explore the latest trends in electric mobility.
-//             </ArticleText>
-//             <Button href="/news/electric-cars">
-//               Read More <FaArrowRight />
-//             </Button>
-//           </Article>
-
-//           <Article>
-//             <IconWrapper>
-//               <FaCarSide />
-//             </IconWrapper>
-//             <ArticleTitle>Solar-Powered Charging Stations</ArticleTitle>
-//             <ArticleText>
-//               Solar-powered charging stations are transforming how we power our vehicles,
-//               especially in off-grid locations. Learn about this sustainable innovation.
-//             </ArticleText>
-//             <Button href="/news/solar-charging">
-//               Read More <FaArrowRight />
-//             </Button>
-//           </Article>
-//         </Section>
-
-//         <Section>
-//           <Article>
-//             <IconWrapper>
-//               <FaCarSide />
-//             </IconWrapper>
-//             <ArticleTitle>Top Trends in Autonomous Driving</ArticleTitle>
-//             <ArticleText>
-//               Autonomous vehicles are on the rise, with companies racing to perfect self-driving
-//               technology. Find out how this innovation is shaping the future of transportation.
-//             </ArticleText>
-//             <Button href="/news/autonomous-driving">
-//               Read More <FaArrowRight />
-//             </Button>
-//           </Article>
-
-//           <Article>
-//             <IconWrapper>
-//               <FaCarSide />
-//             </IconWrapper>
-//             <ArticleTitle>CNG Trucks: Clean Energy for Heavy Loads</ArticleTitle>
-//             <ArticleText>
-//               Compressed Natural Gas (CNG) trucks are providing a cleaner alternative for heavy
-//               transportation. Discover the benefits of this green technology.
-//             </ArticleText>
-//             <Button href="/news/cng-trucks">
-//               Read More <FaArrowRight />
-//             </Button>
-//           </Article>
+//           {newsArticles?.length > 0 ? (
+//             newsArticles?.slice(0, 4).map((article, index) => (
+//               <Article key={index}>
+//                 <IconWrapper>
+//                   <FaNewspaper />
+//                 </IconWrapper>
+//                 <ArticleTitle theme={theme === true ? 'light' : 'dark'} >
+//                   {article.title}
+//                 </ArticleTitle>
+//                 <ArticleText>{article.description}</ArticleText>
+//                 <Button href={article.url} target="_blank">
+//                   Read More <FaArrowRight />
+//                 </Button>
+//               </Article>
+//             ))
+//           ) : (
+//             <p>Loading news articles...</p>
+//           )}
 //         </Section>
 //       </ContentSection>
 //     </Container>
@@ -228,15 +217,19 @@
 
 
 
-// AutoTrendingNews.js
-import React, { useState, useEffect, useContext } from 'react';
+
+
+
+
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { FaCarSide, FaNewspaper, FaArrowRight } from 'react-icons/fa';
+import { FaNewspaper, FaArrowRight } from 'react-icons/fa';
 import { Context } from './Context'; // Assuming you have a theme context
 import car1 from '../Images/car1.jpeg';
 import car2 from '../Images/car2.jpeg';
 import car3 from '../Images/car3.jpeg';
 import Hero4 from './Hero4';
+import { useSelector } from 'react-redux';
 
 // Define animations
 const fadeIn = keyframes`
@@ -261,8 +254,10 @@ const slide = keyframes`
 
 // Styled components
 const Container = styled.div`
-  background: ${({ theme }) => 
-    theme === 'dark' ? 'linear-gradient(90deg, #0f172a, #1e293b)' : 'linear-gradient(90deg, #f8fafc, #e2e8f0)'};
+  background: ${({ theme }) =>
+    theme === 'dark'
+      ? 'linear-gradient(90deg, #0f172a, #1e293b)'
+      : 'linear-gradient(90deg, #f8fafc, #e2e8f0)'};
   color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
   font-family: Arial, sans-serif;
 `;
@@ -275,21 +270,7 @@ const HeroSection = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: ${({ theme }) => theme === 'dark' ? '#1e293b' : '#e2e8f0'};
-`;
-
-const HeroText = styled.h1`
-  position: absolute;
-  z-index: 2;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #fbbf24;
-  text-align: center;
-  animation: ${fadeIn} 1s ease;
-
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
+  background: ${({ theme }) => (theme === 'dark' ? '#1e293b' : '#e2e8f0')};
 `;
 
 const SlidingImages = styled.div`
@@ -312,18 +293,23 @@ const ContentSection = styled.div`
 const Section = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content:center;
+
   gap: 2rem;
   margin-bottom: 2rem;
+  width:100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items:center;
   }
 `;
 
 const Article = styled.div`
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   max-width: 600px;
+  width:100%;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -334,6 +320,13 @@ const Article = styled.div`
     transform: translateY(-5px);
     transition: transform 0.3s ease;
   }
+
+  @media (max-width:320px){
+    min-width:260px;
+  }
+
+
+
 `;
 
 const IconWrapper = styled.div`
@@ -352,7 +345,7 @@ const ArticleTitle = styled.h2`
 const ArticleText = styled.p`
   font-size: 0.9rem;
   line-height: 1.5;
-  font-style:italic;
+  font-style: italic;
 `;
 
 const Button = styled.a`
@@ -380,15 +373,17 @@ const Button = styled.a`
 `;
 
 const AutoTrendingNews = () => {
-  const { theme } = useContext(Context); // Access theme context
+  // const { theme } = useContext(Context); // Access theme context
+const theme = useSelector((state)=>state.theme)
   const [newsArticles, setNewsArticles] = useState([]);
+  const observer = useRef(null);
 
   useEffect(() => {
     // Fetch Google News or any other news API (Example with NewsAPI)
     const fetchNews = async () => {
       const apiKey = '6391618f1cbe4c9488ea70a4b5973ba3'; // Replace with your actual API Key
       const url = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`;
-      
+
       try {
         const response = await fetch(url);
         const data = await response.json();
@@ -397,22 +392,57 @@ const AutoTrendingNews = () => {
         console.error('Error fetching news:', error);
       }
     };
-    
+
     fetchNews();
+  }, []);
+
+  useEffect(() => {
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+
+          if (element.tagName === 'H2') {
+            element.classList.add(
+              'animate__animated',
+              'animate__slideInRight',
+              'animate__slower'
+            );
+          } else if (element.tagName === 'P') {
+            element.classList.add(
+              'animate__animated',
+              'animate__slideInLeft',
+              'animate__slower'
+            );
+          }
+
+          // Stop observing the element after animation is triggered
+          observer.current.unobserve(element);
+        }
+      });
+    };
+
+    observer.current = new IntersectionObserver(handleIntersection, {
+      threshold: 0.3, // Trigger when 30% of the element is visible
+    });
+
+    const headings = document.querySelectorAll('h2');
+    const paragraphs = document.querySelectorAll('p');
+
+    headings.forEach((heading) => observer.current.observe(heading));
+    paragraphs.forEach((paragraph) => observer.current.observe(paragraph));
+
+    return () => {
+      if (observer.current) {
+        observer.current.disconnect();
+      }
+    };
   }, []);
 
   return (
     <Container theme={theme === true ? 'light' : 'dark'}>
       {/* Hero Section */}
-      {/* <HeroSection theme={theme === 'dark' ? 'dark' : 'light'}>
-        <HeroText>Auto Trending News</HeroText>
-        <SlidingImages>
-          <CarImage src={car1} alt="Car 1" />
-          <CarImage src={car2} alt="Car 2" />
-          <CarImage src={car3} alt="Car 3" />
-        </SlidingImages>
-      </HeroSection> */}
-      <Hero4/>
+      <Hero4 />
 
       {/* News Content */}
       <ContentSection>
@@ -423,7 +453,7 @@ const AutoTrendingNews = () => {
                 <IconWrapper>
                   <FaNewspaper />
                 </IconWrapper>
-                <ArticleTitle theme={theme === true ? 'light' : 'dark'} >
+                <ArticleTitle theme={theme === true ? 'light' : 'dark'}>
                   {article.title}
                 </ArticleTitle>
                 <ArticleText>{article.description}</ArticleText>

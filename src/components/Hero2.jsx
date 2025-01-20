@@ -29,6 +29,7 @@ import car21 from "../Images/car21.jpg";
 import car22 from "../Images/car22.jpg";
 import { Context } from './Context';
 import { useContext } from 'react';
+import { useSelector } from 'react-redux';
 
 // Styled Components
 const HeroContainer = styled.section`
@@ -106,7 +107,8 @@ const CarImage = styled.img`
 
 // Hero Component
 const Hero2 = () => {
-   const { theme } = useContext(Context);
+  //  const { theme } = useContext(Context);
+const theme = useSelector((state)=>state.theme)
   const sliderRef = useRef(null);
   const [position, setPosition] = useState(0);
 

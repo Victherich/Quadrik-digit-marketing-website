@@ -35,6 +35,7 @@ const HeroContainer = styled.section`
   background: linear-gradient(90deg, #0f172a, #1e293b);
   overflow: hidden;
   color: #ffffff;
+//   padding-top:100px;
 
 `;
 
@@ -53,6 +54,7 @@ const HeroTitle = styled.h1`
   color: #fbbf24;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  padding-top:80px;
 
   @media (max-width: 768px) {
     font-size: 2rem;

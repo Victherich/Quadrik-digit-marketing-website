@@ -185,6 +185,7 @@ import { Context } from './Context'; // Assuming you have a theme context
 import whoWeAre from '../Images/who we are.png'
 import strategic from '../Images/strategic.png'
 import scope from '../Images/scope.png'
+import { useSelector } from 'react-redux';
 
 
 // Animations
@@ -224,6 +225,16 @@ const HeroSection = styled.section`
   justify-content: center;
   color: #fff;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+
+
+  @media (max-width:884px){
+    height:300px;
+  }
+
+@media (max-width:884px){
+    height:250px;
+  }
+
 `;
 
 const HeroTitle = styled.h2`
@@ -231,18 +242,24 @@ const HeroTitle = styled.h2`
   font-weight: bold;
   text-align: center;
   padding: 1rem;
+
+  @media (max-width:768px){
+    font-size:2rem;
+  }
+
 `;
 
 const Section = styled.section`
   padding: 3rem 2rem;
   display: flex;
-  flex-wrap: wrap;
+  // flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 768px) {
-    flex-wrap: nowrap;
+  @media (max-width: 884px) {
+    // flex-wrap: nowrap;
+    flex-direction:column;
   }
 `;
 
@@ -288,14 +305,17 @@ const IconWrapper = styled.div`
 
 const Slideshow = styled.div`
   display: flex;
-  overflow-x: auto;
+  // overflow-x: auto;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
   gap: 1rem;
   padding: 1rem;
   animation: ${fadeIn} 1.8s ease;
 
   img {
     width: 300px;
-    height: auto;
+    height: 150px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s;
@@ -308,7 +328,8 @@ const Slideshow = styled.div`
 
 // About Component
 const AboutUs = () => {
-  const { theme } = useContext(Context); // Access theme context
+  // const { theme } = useContext(Context); // Access theme context
+  const theme = useSelector((state)=>state.theme)
 
 
     

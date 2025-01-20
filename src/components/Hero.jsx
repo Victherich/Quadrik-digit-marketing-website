@@ -128,6 +128,13 @@ import car4 from '../Images/car4.jpeg';
 import car5 from '../Images/car5.jpeg';
 import car6 from '../Images/car6.jpeg';
 import car7 from '../Images/car7.jpeg';
+import car12 from '../Images/car12.jpg';
+import car13 from '../Images/car13.jpg';
+import car22 from '../Images/car22.jpg';
+import car21 from '../Images/car21.jpg';
+import car18 from '../Images/car18.jpg';
+import { useSelector } from 'react-redux';
+
 
 // Styled Components
 const HeroContainer = styled.section`
@@ -164,6 +171,10 @@ const HeroTitle = styled.h1`
     font-size: 2rem;
   }
 
+   @media (max-width: 428px) {
+    font-size: 1.5rem;
+  }
+
   @keyframes flyInFromBottom {
     from {
       opacity: 0;
@@ -188,6 +199,10 @@ const HeroSubtitle = styled.p`
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
+  }
+
+   @media (max-width: 428px) {
+    font-size: 1rem;
   }
 
   @keyframes flyInFromTop {
@@ -222,8 +237,22 @@ const Hero = () => {
   const sliderRef = useRef(null);
   const [position, setPosition] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const theme = useSelector((state)=>state.theme)
 
-  const carImages = [car1, car2, car3, car4, car5, car6, car7];
+  const carImages1 = [car1, car2, car3, car4, car5, car6, car7];
+  const carImages2 = [car12, car13, car22, car21, car18];
+
+  const [carImages,setCarImages]=useState(carImages2)
+
+  useEffect(()=>{
+    if(theme){
+      setCarImages(carImages2)
+    } else{
+      setCarImages(carImages1)
+    }
+
+  },[theme])
+  
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -17,6 +17,7 @@ import car21 from "../Images/car21.jpg";
 import car22 from "../Images/car22.jpg";
 import Hero3 from './Hero3';
 import Hero from './Hero';
+import { useSelector } from 'react-redux';
 
 // Animation keyframes for fading and sliding
 const fadeIn = keyframes`
@@ -162,19 +163,11 @@ const ExploreButton = styled.button`
 `;
 
 const CarShowroomPage = () => {
-  const { theme } = useContext(Context);
+  const { cars } = useContext(Context);
+const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
 
-  const cars = [
-    { id: 1, name: 'Car Model 1', image: car11 },
-    { id: 2, name: 'Car Model 2', image: car12 },
-    { id: 3, name: 'Car Model 3', image: car13 },
-    { id: 4, name: 'Car Model 4', image: car14 },
-    { id: 5, name: 'Car Model 1', image: car15 },
-    { id: 6, name: 'Car Model 2', image: car16 },
- 
-    // Add more cars as needed
-  ];
+  
 
   return (
     <Container theme={theme === true ? lightTheme : darkTheme}>
@@ -199,21 +192,21 @@ const CarShowroomPage = () => {
       </HeroSection> */}
         
       <CarGrid>
-        {cars.map((car) => (
+        {cars.slice(0,6).map((car) => (
           <CarCard
             key={car.id}
             theme={theme ===  true ? 'light' : 'dark'}
-            onClick={() => navigate(`/car/${car.id}`)}
+            // onClick={() => navigate(`/car/${car.id}`)}
           >
             <CarImageThumb src={car.image} alt={car.name} />
             <CarTitle theme={theme ===  true ? 'light' : 'dark'}>
               {car.name}
             </CarTitle>
-            <p
+            {/* <p
               theme={theme === true ? lightTheme : darkTheme}
             >
              Click to Explore...
-            </p>
+            </p> */}
           </CarCard>
         ))}
 
@@ -222,6 +215,7 @@ const CarShowroomPage = () => {
       <ExploreButton
               theme={theme === true ? lightTheme : darkTheme}
               style={{display:"flex",justifyContent:"center", alignItems:"center", gap:"10px",marginTop:"50px"}}
+              onClick={()=>navigate('/carshowroompage2')}
             >
               Explore More <FaArrowRight/>
             </ExploreButton>

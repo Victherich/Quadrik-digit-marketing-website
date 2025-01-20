@@ -5,6 +5,7 @@ import { Context } from './Context';
 import { useNavigate } from 'react-router-dom';
 import car10 from '../Images/car10.jpg'
 import car17 from '../Images/car17.jpg'
+import { useSelector } from 'react-redux';
 
 // Define fade-in and slide animations
 const fadeIn = keyframes`
@@ -30,7 +31,8 @@ const slide = keyframes`
 // Define light and dark theme colors
 const lightTheme = {
 //   background: 'linear-gradient(90deg, #f8fafc, #e2e8f0)',
-  background: '#f8fafc',
+  // background: '#f8fafc',
+  background: 'rgba(255,255,255,0.8)',
   text: '#1e293b',
   primary: '#FF7133',
   secondary: '#eab308',
@@ -89,7 +91,7 @@ const TitleText = styled.h1`
   animation: ${fadeIn} 1s ease;
 
   @media (max-width: 768px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -162,7 +164,8 @@ const Button = styled.a`
 `;
 
 const WhyPartnerWithUs = () => {
-  const { theme } = useContext(Context); // Get the current theme from context
+  // const { theme } = useContext(Context); // Get the current theme from context
+  const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
 
   return (

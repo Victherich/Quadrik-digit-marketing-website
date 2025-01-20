@@ -227,9 +227,20 @@ import { FaArrowRight, FaCarSide } from 'react-icons/fa';
 import car10 from "../Images/car10.jpg";
 import car11 from "../Images/car11.jpg";
 import car12 from "../Images/car12.jpg";
+import car13 from "../Images/car13.jpg";
+import car14 from "../Images/car14.jpg";
+import car15 from "../Images/car15.png";
+import car16 from "../Images/car16.jpg";
+import car17 from "../Images/car17.jpg";
+import car18 from "../Images/car18.jpg";
+import car19 from "../Images/car19.jpg";
+import car20 from "../Images/car20.jpg";
+import car21 from "../Images/car21.jpg";
+import car22 from "../Images/car22.jpg";
 import { Context } from './Context';
 import { useNavigate } from 'react-router-dom';
 import 'animate.css'; // For animations
+import { useSelector } from 'react-redux';
 
 const fadeIn = keyframes`
   from {
@@ -294,7 +305,7 @@ const SlidingImages = styled.div`
   flex-direction: column;
   position: absolute;
   width: 100%;
-  animation: ${slide} 100s linear infinite;
+  animation: ${slide} 50s linear infinite;
 `;
 
 const CarImage = styled.img`
@@ -366,7 +377,8 @@ const Button = styled.a`
 `;
 
 const AboutUsPreview = () => {
-  const { theme } = useContext(Context);
+  // const { theme } = useContext(Context);
+const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
   const observer = useRef(null);
 
@@ -468,6 +480,16 @@ const AboutUsPreview = () => {
           <CarImage src={car10} alt="Car 10" />
           <CarImage src={car11} alt="Car 11" />
           <CarImage src={car12} alt="Car 12" />
+          <CarImage src={car13} alt="Car 13" />
+          <CarImage src={car14} alt="Car 14" />
+           <CarImage src={car15} alt="Car 15" />
+           <CarImage src={car16} alt="Car 16" />
+           <CarImage src={car17} alt="Car 17" />
+           <CarImage src={car18} alt="Car 18" />
+           <CarImage src={car19} alt="Car 19" />
+           <CarImage src={car20} alt="Car 20" />
+           <CarImage src={car21} alt="Car 21" />
+           <CarImage src={car22} alt="Car 22" />
         </SlidingImages>
       </TitleSection>
 

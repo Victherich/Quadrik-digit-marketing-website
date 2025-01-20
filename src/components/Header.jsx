@@ -168,13 +168,14 @@
 
 
 
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaBars, FaTimes, FaCar } from 'react-icons/fa';
 import carlogo from '../Images/carlogo.jpeg';
 import smallCar from '../Images/car5Flip.png';
 import { Context } from './Context';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // Animation Keyframes
 const fadeIn = keyframes`
@@ -202,7 +203,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 1rem;
   background: ${({ theme }) => (theme === 'dark' ? 'linear-gradient(90deg, #0f172a, #1e293b)' : 'linear-gradient(90deg, #f8fafc, #e2e8f0)')};
   color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -233,12 +234,33 @@ const Logo = styled.div`
   }
 `;
 
+const Logo2 = styled.div`
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : 'rgba(255, 68, 0, 0.8)')};
+  // color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : '#1e293b')};
+  cursor: pointer;
+  gap: 10px;
+
+  svg {
+    margin-right: 0.5rem;
+    animation: ${fadeIn} 1s ease;
+  }
+
+  @media (max-width:428px){
+    display:none;
+  }
+`;
+
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: 20px;
+  text-align:center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 884px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
     flex-direction: column;
     position: absolute;
@@ -271,7 +293,7 @@ const Hamburger = styled.div`
   font-size: 1.5rem;
   cursor: pointer;
 
-  @media (max-width: 768px) {
+  @media (max-width: 884px) {
     display: block;
   }
 `;
@@ -297,18 +319,57 @@ const CarContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 9999;
+
+  @media (max-width:428px){
+    width:70%;
+  }
 `;
 
 // Header Component
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { theme, setTheme } = useContext(Context);
+  // const { theme, setTheme } = useContext(Context);
   const navigate = useNavigate();
+  const location = useLocation();
+const theme = useSelector((state)=>state.theme)
+const sideMenuRef = useRef();
+const {loading,setLoading}=useContext(Context);
+
+
+
+
+  // Handle click outside of menu
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sideMenuRef.current && !sideMenuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+
+
+   useEffect(() => {
+        setLoading(true)
+        const timeout = setTimeout(() => {
+          setLoading(false);
+        }, 2000); // 2 seconds
+    
+        return () => clearTimeout(timeout); // Cleanup timeout
+      }, [location.pathname]);
+  
 
   return (
     <HeaderContainer theme={theme === true ? 'light' : 'dark'}>
       <Logo theme={theme === true ? 'light' : 'dark'}>
-        <Img src={carlogo} alt="logo" /> FAC TRADE TRACK <FaCar />
+        <Img src={carlogo} alt="logo" /> <Logo2 theme={theme === true ? 'light' : 'dark'} >FAC TRADE TRACK <FaCar /></Logo2>
       </Logo>
       <CarContainer>
         <FastCar src={smallCar} alt="Fast Car" />
@@ -316,14 +377,14 @@ const Header = () => {
       <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}
       </Hamburger>
-      <Nav isOpen={isMenuOpen} theme={theme === true ? 'light' : 'dark'}>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => {navigate('/');window.scroll(0,0)}}>Home</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => navigate('/aboutus')}>About Us</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate('/carshowroompage2')}>Show Room</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'}onClick={()=>navigate('/servicesandsupport')}>Services & Support</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'}>Brands & Technology</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => navigate("/autotrendingnews")}>Auto Trending News</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/contactus")}>Contact Us</NavItem>
+      <Nav isOpen={isMenuOpen} theme={theme === true ? 'light' : 'dark'} ref={sideMenuRef}>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => {navigate('/');window.scroll(0,0);setIsMenuOpen(false)}}>Home</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => {navigate('/aboutus');setIsMenuOpen(false)}}>About Us</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/carshowroompage2');setIsMenuOpen(false)}}>Show Room</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>{navigate('/servicesandsupport');setIsMenuOpen(false)}}>Services & Support</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/brandandtechnology');setIsMenuOpen(false)}}>Brands & Technology</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() =>{ navigate("/autotrendingnews");setIsMenuOpen(false)}}>Auto Trending News</NavItem>
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>{navigate("/contactus");setIsMenuOpen(false)}}>Contact Us</NavItem>
       </Nav>
     </HeaderContainer>
   );

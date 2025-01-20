@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Context } from './Context';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // Light and dark theme colors
 const lightTheme = {
@@ -86,7 +87,8 @@ const Button = styled.button`
 `;
 
 const CarDetailPage = () => {
-  const { theme } = useContext(Context);
+  // const { theme } = useContext(Context);
+  const theme = useSelector((state)=>state.theme)
   const { carId } = useParams();
   const navigate = useNavigate();
 

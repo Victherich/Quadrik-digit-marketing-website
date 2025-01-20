@@ -29,6 +29,7 @@ import leasing from '../Images/leasing.png'
 import busstop from '../Images/busstop.png'
 import media1 from '../media/media1.mp4'
 import media3 from '../media/media3.mp4'
+import { useSelector } from 'react-redux';
 
 const lightTheme = {
   background: '#f8fafc',
@@ -116,7 +117,7 @@ const SlidingImages = styled.div`
   display: flex;
   position: absolute;
   width: 100%;
-  animation: ${slide} 100s linear infinite;
+  animation: ${slide} 50s linear infinite;
   flex-direction: column;
 `;
 
@@ -266,11 +267,12 @@ const offerings2 = [
 
 const CoreOfferingsPage = () => {
 
-const {theme,setTheme}=useContext(Context);
+// const {theme,setTheme}=useContext(Context);
+const theme = useSelector((state)=>state.theme)
 
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  // const toggleTheme = () => {
+  //   setTheme(theme === 'light' ? 'dark' : 'light');
+  // };
 
   const sliderSettings = {
     dots: true,
@@ -285,9 +287,9 @@ const {theme,setTheme}=useContext(Context);
   return (
     <ThemeProvider theme={theme === true ? lightTheme : darkTheme}>
       <Container>
-        <ThemeToggle onClick={toggleTheme}>
+        {/* <ThemeToggle onClick={toggleTheme}>
           {theme === 'light' ? <FaMoon /> : <FaSun />} Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
-        </ThemeToggle>
+        </ThemeToggle> */}
 
    
             <HeroSection theme={theme === true ? 'light' : 'dark'}>

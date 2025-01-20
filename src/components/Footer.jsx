@@ -139,6 +139,7 @@ import styled, { keyframes } from 'styled-components';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { Context } from './Context';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 // Animation Keyframes
 const fadeIn = keyframes`
@@ -229,6 +230,7 @@ const Copyright = styled.p`
   margin-top: 1rem;
   font-size: 0.9rem;
   opacity: 0.8;
+  text-align:center;
 `;
 
 const Strong = styled.strong`
@@ -237,7 +239,8 @@ const Strong = styled.strong`
 
 // Footer Component
 const Footer = () => {
-  const { theme } = useContext(Context);
+  // const { theme } = useContext(Context);
+  const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
 
   return (
