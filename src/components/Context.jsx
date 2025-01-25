@@ -9,7 +9,7 @@ import car6 from '../Images/car6.jpeg';
 import car7 from '../Images/car7.jpeg';
 import car11 from "../Images/car11.jpg";
 import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car13.jpg";
+import car13 from "../Images/car15.png";
 import car14 from "../Images/car14.jpg";
 import car15 from "../Images/car15.png";
 import car16 from "../Images/car16.jpg";
@@ -20,6 +20,19 @@ import car20 from "../Images/car20.jpg";
 import car21 from "../Images/car21.jpg";
 import car22 from "../Images/car22.jpg";
 
+import car23 from "../Images/car23.jpeg";
+import car24 from "../Images/car24.jpeg";
+import car25 from "../Images/car25.jpeg";
+import car26 from "../Images/car26.jpeg";
+import car27 from "../Images/car27.jpeg";
+import car28 from "../Images/car28.jpeg";
+import car29 from "../Images/car29.jpeg";
+import car30 from "../Images/car30.jpeg";
+import car31 from "../Images/car31.jpeg";
+import car32 from "../Images/car32.jpeg";
+import car33 from "../Images/car33.jpeg";
+// import car34 from "../Images/car34.jpeg";
+import car35 from "../Images/car35.jpeg";
 
 
 export const Context = createContext();
@@ -54,9 +67,25 @@ const ContextProvider = ({children}) => {
       { id: 8, name: 'TRUCK COLLECTION', image: car11 },
       { id: 11, name: 'VR DUMPER', image: car14 },
       { id: 13, name: 'KL TRACTOR', image: car16 },
-      
+ 
       { id: 16, name: 'SPECIAL TRUCK', image: car19 },
       { id: 17, name: 'KX TRACTOR', image: car20 },
+
+
+      { id: 23, name: '', image: car23 },
+{ id: 24, name: '', image: car24 },
+{ id: 25, name: '', image: car25 },
+{ id: 26, name: '', image: car26 },
+{ id: 27, name: '', image: car27 },
+{ id: 28, name: '', image: car28 },
+{ id: 29, name: '', image: car29 },
+{ id: 30, name: '', image: car30 },
+{ id: 31, name: '', image: car31 },
+{ id: 32, name: '', image: car32 },
+{ id: 33, name: '', image: car33 },
+
+{ id: 35, name: '', image: car35 },
+
     ];
     
 

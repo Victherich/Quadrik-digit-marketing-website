@@ -12,13 +12,13 @@ const ScrollAnimation = ({ children }) => {
 
           if (element.tagName === 'H1') {
             console.log('Animating H1', element); // Debugging
-            element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slow');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slow');
           } else if (element.tagName === 'H2') {
-            element.classList.add('animate__animated', 'animate__slideInLeft', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
           } else if (element.tagName === 'P') {
-            element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
           } else if (element.tagName === 'A') {
-            element.classList.add('animate__animated', 'animate__zoomIn', 'animate__slow');
+            // element.classList.add('animate__animated', 'animate__zoomIn', 'animate__slow');
           }
 
           // Stop observing the element after animation is triggered

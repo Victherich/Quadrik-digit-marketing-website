@@ -17,7 +17,7 @@ import car7 from '../Images/car7.jpeg';
 import car10 from "../Images/car10.jpg";
 import car11 from "../Images/car11.jpg";
 import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car13.jpg";
+import car13 from "../Images/car15.png";
 import car14 from "../Images/car14.jpg";
 import car15 from "../Images/car15.png";
 import car16 from "../Images/car16.jpg";

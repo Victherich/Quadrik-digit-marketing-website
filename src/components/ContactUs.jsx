@@ -7,7 +7,7 @@ import { Context } from './Context'; // Assuming you have a theme context
 
 // Background Image
 import contactBackground from '../Images/car2.jpeg';
-import contactBackground2 from '../Images/car13.jpg';
+import contactBackground2 from '../Images/car15.png';
 import carLogo from '../Images/carlogo.jpeg'
 import { useSelector } from 'react-redux';
 

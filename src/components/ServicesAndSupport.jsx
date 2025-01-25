@@ -441,9 +441,9 @@ const ServicesAndSupport = () => {
           const element = entry.target;
 
           if (element.tagName === 'H2') {
-            element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
           } else if (element.tagName === 'P') {
-            element.classList.add('animate__animated', 'animate__slideInLeft', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
           }
 
           // Stop observing the element after animation is triggered

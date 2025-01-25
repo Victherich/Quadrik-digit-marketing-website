@@ -227,7 +227,7 @@ import { FaArrowRight, FaCarSide } from 'react-icons/fa';
 import car10 from "../Images/car10.jpg";
 import car11 from "../Images/car11.jpg";
 import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car13.jpg";
+import car13 from "../Images/car15.png";
 import car14 from "../Images/car14.jpg";
 import car15 from "../Images/car15.png";
 import car16 from "../Images/car16.jpg";
@@ -389,9 +389,9 @@ const theme = useSelector((state)=>state.theme)
   //         const element = entry.target;
 
   //         if (element.tagName === 'H1') {
-  //           element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slow');
+  //           element.classList.add('animate__animated', 'animate__rollInRight', 'animate__slow');
   //         } else if (element.tagName === 'H2' || element.tagName === 'P') {
-  //           element.classList.add('animate__animated', 'animate__slideInLeft', 'animate__slower');
+  //           element.classList.add('animate__animated', 'animate__rollInLeft', 'animate__slower');
   //         } else if (element.tagName === 'A') {
   //           element.classList.add('animate__animated', 'animate__zoomIn', 'animate__slow');
   //         }
@@ -432,12 +432,13 @@ const theme = useSelector((state)=>state.theme)
   
           if (element.tagName === 'H1') {
             console.log('Animating H1', element); // Debugging
-            element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slow');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slow');
+            
           } else if (element.tagName === 'H2') {
-            element.classList.add('animate__animated', 'animate__slideInLeft', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
             
           } else if (element.tagName === 'P') {
-            element.classList.add('animate__animated', 'animate__slideInRight', 'animate__slower');
+            // element.classList.add('animate__animated', 'animate__rollIn', 'animate__slower');
             
           }
           

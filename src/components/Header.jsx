@@ -1,181 +1,18 @@
 
 
 
-// import React, { useState, useEffect, useContext } from 'react';
-// import styled, { keyframes } from 'styled-components';
-// import { FaBars, FaTimes, FaCar } from 'react-icons/fa';
-// import carlogo from '../Images/carlogo.jpeg';
-// import smallCar from '../Images/car5Flip.png';
-// import { Context } from './Context';
-// import { useNavigate } from 'react-router-dom';
-
-// // Animation Keyframes
-// const fadeIn = keyframes`
-//   from {
-//     opacity: 0;
-//     transform: translateY(-20px);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// `;
-
-// const slideFastContinuous = keyframes`
-//   from {
-//     transform: translateX(-200%);
-//   }
-//   to {
-//     transform: translateX(200%);
-//   }
-// `;
-
-// // Styled Components
-// const HeaderContainer = styled.header`
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1rem 2rem;
-//   background: linear-gradient(90deg, #0f172a, #1e293b);
-//   color: #ffffff;
-//   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-//   animation: ${fadeIn} 0.8s ease;
-//   position:fixed;
-//   top:0px;
-//   z-index:999;
-//   width:100%;
-
-//   @media (max-width: 768px) {
-//     padding: 1rem;
-//   }
-// `;
-
-// const Logo = styled.div`
-//   display: flex;
-//   align-items: center;
-//   font-size: 1.5rem;
-//   font-weight: bold;
-//   color: #fbbf24;
-//   cursor: pointer;
-//   gap: 10px;
-
-//   svg {
-//     margin-right: 0.5rem;
-//     animation: ${fadeIn} 1s ease;
-//   }
-// `;
-
-// const Nav = styled.nav`
-//   display: flex;
-//   align-items: center;
-//   gap: 20px;
-
-//   @media (max-width: 768px) {
-//     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
-//     flex-direction: column;
-//     position: absolute;
-//     top: 100%;
-//     right: 0;
-//     background: #1e293b;
-//     width: 100%;
-//     padding: 1rem 0;
-//     z-index: 10;
-//     animation: ${fadeIn} 0.5s ease;
-//   }
-// `;
-
-// const NavItem = styled.a`
-//   font-size: 0.8rem;
-//   text-decoration: none;
-//   color: #ffffff;
-//   cursor: pointer;
-//   transition: color 0.3s;
-
-//   &:hover {
-//     color: #fbbf24;
-//     text-decoration:underline;
-//   }
-// `;
-
-// const Hamburger = styled.div`
-//   display: none;
-//   font-size: 1.5rem;
-//   cursor: pointer;
-
-//   @media (max-width: 768px) {
-//     display: block;
-//   }
-// `;
-
-// const Img = styled.img`
-//   width: 30px;
-//   height: 30px;
-//   border-radius: 50%;
-// `;
-
-// const FastCar = styled.img`
-//   width: 80px;
-//   height: auto;
-//   animation: ${slideFastContinuous} 5s linear infinite;
-  
-// `;
-
-// const CarContainer = styled.div`
-//   position: relative;
-//   display: flex;
-//   overflow: hidden;
-//   width: 20%;
-//   height: 30px;
-//   // background-color: #f8fafc;
-//   justify-content: center;
-//   align-items: center;
-//   z-index: 9999;
-// `;
-
-// // Header Component
-// const Header = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const { theme, setTheme } = useContext(Context);
-//   const navigate = useNavigate()
-
-//   return (
-//     <HeaderContainer>
-//       <Logo>
-//         <Img src={carlogo} alt="logo" /> FAC TRADE TRACK <FaCar />
-//       </Logo>
-//       <CarContainer>
-//         <FastCar src={smallCar} alt="Fast Car" />
-//       </CarContainer>
-//       <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>
-//         {isMenuOpen ? <FaTimes /> : <FaBars />}
-//       </Hamburger>
-//       <Nav isOpen={isMenuOpen}>
-//         <NavItem onClick={()=>navigate('/')}>Home</NavItem>
-//         <NavItem onClick={()=>navigate('/aboutus')}>About Us</NavItem>
-//         <NavItem >Show Room</NavItem>
-//         <NavItem >Services & Support</NavItem>
-//         <NavItem >Brands & Technology</NavItem>
-//         <NavItem >Auto Trending News</NavItem>
-
-//         <NavItem >Contact Us</NavItem>
-//       </Nav>
-//     </HeaderContainer>
-//   );
-// };
-
-// export default Header;
-
-
-
-
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaBars, FaTimes, FaCar } from 'react-icons/fa';
 import carlogo from '../Images/carlogo.jpeg';
 import smallCar from '../Images/car5Flip.png';
+import smallCar2 from '../Images/smallcar2.png';
+import smallCar3 from '../Images/smallcar3.png';
 import { Context } from './Context';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import faclogo2 from '../Images/faclogo2.png';
+import faclogo1 from '../Images/faclogo.jpeg'
 
 // Animation Keyframes
 const fadeIn = keyframes`
@@ -203,7 +40,7 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   background: ${({ theme }) => (theme === 'dark' ? 'linear-gradient(90deg, #0f172a, #1e293b)' : 'linear-gradient(90deg, #f8fafc, #e2e8f0)')};
   color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -257,8 +94,13 @@ const Logo2 = styled.div`
 const Nav = styled.nav`
   display: flex;
   align-items: center;
+  justify-content:space-between;
   gap: 20px;
   text-align:center;
+
+  @media (max-width:1280px){
+    // gap:10px;
+  }
 
   @media (max-width: 884px) {
     display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
@@ -270,7 +112,8 @@ const Nav = styled.nav`
     width: 100%;
     padding: 1rem 0;
     z-index: 10;
-    animation: ${fadeIn} 0.5s ease;
+    // animation: ${fadeIn} 0.5s ease;
+    
   }
 `;
 
@@ -299,15 +142,16 @@ const Hamburger = styled.div`
 `;
 
 const Img = styled.img`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
 `;
 
 const FastCar = styled.img`
   width: 80px;
   height: auto;
   animation: ${slideFastContinuous} 5s linear infinite;
+   position: absolute; /* To layer the cars within the container */
 `;
 
 const CarContainer = styled.div`
@@ -325,6 +169,19 @@ const CarContainer = styled.div`
   }
 `;
 
+
+const StaggeredCar = styled(FastCar)`
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+  &:nth-child(2) {
+    animation-delay: 1.5s;
+  }
+  &:nth-child(3) {
+    animation-delay: 3s;
+  }
+`;
+
 // Header Component
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -335,7 +192,15 @@ const theme = useSelector((state)=>state.theme)
 const sideMenuRef = useRef();
 const {loading,setLoading}=useContext(Context);
 
+const [faclogo, setFaclogo]=useState(faclogo2)
 
+useEffect(()=>{
+  if(theme){
+    setFaclogo(faclogo2)
+  }else{
+    setFaclogo(faclogo1)
+  }
+},[theme])
 
 
   // Handle click outside of menu
@@ -368,11 +233,17 @@ const {loading,setLoading}=useContext(Context);
 
   return (
     <HeaderContainer theme={theme === true ? 'light' : 'dark'}>
-      <Logo theme={theme === true ? 'light' : 'dark'}>
-        <Img src={carlogo} alt="logo" /> <Logo2 theme={theme === true ? 'light' : 'dark'} >FAC TRADE TRACK <FaCar /></Logo2>
+      <Logo theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate('/')}>
+        {/* <Img src={carlogo} alt="logo" /> <Logo2 theme={theme === true ? 'light' : 'dark'} >FAC TRADE TRACK <FaCar /></Logo2> */}
+        <Img src={faclogo} alt="logo" />
       </Logo>
       <CarContainer>
+        {/* <FastCar src={smallCar} alt="Fast Car" />
         <FastCar src={smallCar} alt="Fast Car" />
+        <FastCar src={smallCar} alt="Fast Car" /> */}
+          <StaggeredCar src={smallCar} alt="Fast Car 1" />
+  <StaggeredCar src={smallCar2} alt="Fast Car 2" />
+  <StaggeredCar src={smallCar3} alt="Fast Car 3" />
       </CarContainer>
       <Hamburger onClick={() => setIsMenuOpen(!isMenuOpen)}>
         {isMenuOpen ? <FaTimes /> : <FaBars />}

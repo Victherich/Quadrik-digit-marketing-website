@@ -34,9 +34,9 @@ function App() {
   <BrowserRouter>
   <ScrollToTop/>
   <Snowfall2/>
-  {/* <Snowfall/> */}
+
   <Header/>
-  <ScrollAnimation>
+ 
   {loading && <LoadingSpinner onComplete={() => setLoading(false)} />}
   <Routes>
       <Route path='/' element={<LandingPage/>}/>
@@ -47,7 +47,7 @@ function App() {
      <Route path='/servicesandsupport' element={<ServicesAndSupport/>}/>
      <Route path='/brandandtechnology' element={<BrandAndTechnology/>}/>
     </Routes>
-  </ScrollAnimation>
+
    
     <ThemeSwitch/>
     <Hero2/>

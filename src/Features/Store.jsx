@@ -3,6 +3,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import MySliceReducer from './Slice';
 
+
 const persistConfig = {
   key: 'root',
   storage,

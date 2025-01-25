@@ -13,7 +13,7 @@ import car5 from '../Images/car5.jpeg';
 import car6 from '../Images/car6.jpeg';
 import car11 from "../Images/car11.jpg";
 import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car13.jpg";
+import car13 from "../Images/car15.png";
 import car14 from "../Images/car14.jpg";
 import car15 from "../Images/car15.png";
 import car16 from "../Images/car16.jpg";
@@ -30,6 +30,7 @@ import busstop from '../Images/busstop.png'
 import media1 from '../media/media1.mp4'
 import media3 from '../media/media3.mp4'
 import { useSelector } from 'react-redux';
+import structure from '../Images/structure.jpeg'
 
 const lightTheme = {
   background: '#f8fafc',
@@ -231,7 +232,7 @@ const offerings = [
   {
     title: "Infrastructure & Urban Development",
     icon: <FaBus />,
-    image: busstop,
+    image: structure,
     details: [
       "Bus Stop Design and Construction: Modern, eco-friendly bus stops equipped with solar panels and smart features.",
       "CNG and Mini CNG Stations: Convenient refueling infrastructure to support the growing demand for alternative fuels.",

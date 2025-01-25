@@ -1,7 +1,8 @@
 // LoadingSpinner.js
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import logo from '../Images/carlogo.jpeg'; // Replace with the path to your car logo image
+// import logo from '../Images/carlogo.jpeg'; // Replace with the path to your car logo image
+import logo from '../Images/logo4.png'; 
 
 // Keyframes for spinning animation
 const spin = keyframes`
@@ -40,10 +41,11 @@ const LoadingContainer = styled.div`
 
 // Styled logo for spinning
 const SpinningLogo = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
   border-radius:50%;
   animation: ${spin} 5s linear infinite;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `;
 
 const LoadingSpinner = ({ onComplete }) => {

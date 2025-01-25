@@ -178,12 +178,13 @@ import styled, { keyframes } from 'styled-components';
 import { FaLeaf, FaSolarPanel, FaTruck, FaChargingStation } from 'react-icons/fa';
 import car11 from '../Images/car11.jpg';
 import car12 from '../Images/car12.jpg';
-import car13 from '../Images/car13.jpg';
+import car15 from '../Images/car15.png';
 import car14 from '../Images/car14.jpg';
 import car1 from '../Images/car1.jpeg'
 import { Context } from './Context'; // Assuming you have a theme context
-import whoWeAre from '../Images/who we are.png'
-import strategic from '../Images/strategic.png'
+// import whoWeAre from '../Images/who we are.png'
+import whoWeAre from '../Images/whoweare2.jpeg'
+import strategic from '../Images/strategic2.jpeg'
 import scope from '../Images/scope.png'
 import { useSelector } from 'react-redux';
 
@@ -271,10 +272,16 @@ const ContentColumn = styled.div`
 
 const ImageColumn = styled.div`
   animation: ${fadeIn} 1.5s ease;
+  width:50%;
+
+  @media (max-width:884px){
+    width:100%;
+  }
+
 `;
 
 const Img = styled.img`
-
+  width:100%
 `
 
 const SectionTitle = styled.h2`
@@ -392,7 +399,7 @@ const AboutUs = () => {
       <Slideshow>
         <img src={car11} alt="Car Slide 1" />
         <img src={car12} alt="Car Slide 2" />
-        <img src={car13} alt="Car Slide 3" />
+        <img src={car15} alt="Car Slide 3" />
         <img src={car14} alt="Car Slide 3" />
       </Slideshow>
     </AboutContainer>
