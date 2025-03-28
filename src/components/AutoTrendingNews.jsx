@@ -294,6 +294,7 @@ import styled, { keyframes } from 'styled-components';
 import { FaNewspaper, FaArrowRight } from 'react-icons/fa';
 import Hero4 from './Hero4';
 import { useSelector } from 'react-redux';
+import Hero5 from './Hero5';
 
 // Define animations
 const fadeIn = keyframes`
@@ -503,7 +504,7 @@ const AutoTrendingNews = () => {
   return (
     <Container theme={theme === true ? 'light' : 'dark'}>
       {/* Hero Section */}
-      <Hero4 />
+      <Hero5/>
 
       {/* News Content */}
       <ContentSection>

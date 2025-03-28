@@ -10,6 +10,7 @@ import contactBackground from '../Images/car2.jpeg';
 import contactBackground2 from '../Images/car15.png';
 import carLogo from '../Images/carlogo.jpeg'
 import { useSelector } from 'react-redux';
+import Swal from 'sweetalert2'
 
 // Define theme colors for light and dark mode
 const lightTheme = {
@@ -131,6 +132,23 @@ const Img = styled.img`
   width:50px;
   heigh:50px;
   border-radius:50%;
+
+
+`
+
+const ContactWrap = styled.div`
+  width:100%;
+  display:flex;
+  justify-item:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  gap:20px;
+  padding:20px;
+
+  strong{
+  // color:yellow;
+  }
 `
 
 // Contact Form Component
@@ -149,11 +167,34 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Submit the form (e.g., to an API)
-    console.log('Form Submitted:', formData);
+      Swal.fire({text:"Please wait..."});
+      Swal.showLoading();
+  
+    try {
+      const response = await fetch("https://facafrica.com/api/contact_form_endpoint.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+  
+      const data = await response.json();
+  
+      if (data.success) {
+        Swal.fire({text:"✅ Your message has been sent successfully!"});
+        setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
+      } else {
+        Swal.fire({text:`❌ Error: ${data.error}`});
+      }
+    } catch (error) {
+      Swal.fire({text:"❌ Network error, please try again."});
+      console.error("Error submitting form:", error);
+    }
   };
+  
 
   return (
     <ContactContainer theme={theme === true ? 'light' : 'dark'} >
@@ -212,6 +253,12 @@ const ContactUs = () => {
           </InputGroup>
           <SubmitButton theme={theme === false ? darkTheme : lightTheme} type="submit">Send Message</SubmitButton>
         </form>
+        <ContactWrap>
+          
+          <p><strong>Address:</strong> Km 3 Apapa / Oshodi Exp. Way By Coker Bus stop.Coker Lagos Nigeria.</p>
+          <p><strong>Email:</strong> info@facafrica.com</p>
+          <p><strong>Phone:</strong> 08138842889</p>
+        </ContactWrap>
       </FormWrapper>
     </ContactContainer>
   );

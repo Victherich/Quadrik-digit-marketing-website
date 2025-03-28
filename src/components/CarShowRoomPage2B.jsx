@@ -20,6 +20,8 @@ import car22 from "../Images/car22.jpg";
 import Hero3 from './Hero3';
 import Hero from './Hero';
 import { useSelector } from 'react-redux';
+import car12b from '../Images/car12bc.png'
+import Hero6 from './Hero6';
 
 // Animation keyframes for fading and sliding
 const fadeIn = keyframes`
@@ -74,16 +76,16 @@ const Container = styled.div`
 const CarGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 20px;
   justify-content: center;
+  align-items:center;
   animation: ${fadeIn} 1.5s ease;
+  margin-top:20px;
 `;
 
 const CarCard = styled.div`
-  flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  width: 300px;
+  height:200px;
   background: ${({ theme }) => (theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)')};
   padding: 1rem;
   border-radius: 8px;
@@ -99,20 +101,60 @@ const CarCard = styled.div`
 
 const CarImageThumb = styled.img`
   width: 100%;
-  height: 250px;
-  object-fit: cover;
+  height: 100%;
   border-radius: 8px;
+
+  @media(max-width:768px){
+  
+  }
+  
 `;
 
-const CarTitle = styled.p`
-  font-size: 1rem;
-  font-weight: bold;
-  margin-top: 1rem;
-  color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
+const CarGrid2 = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items:center;
+  animation: ${fadeIn} 1.5s ease;
+  margin-top:20px;
+  `;
+
+const CarCard2 = styled.div`
+  width: 300px;
+  height:300px;
+  background: ${({ theme }) => (theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)')};
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background: ${({ theme }) => theme.accent};
+  }
 `;
+
+const CarImageThumb2 = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+
+  @media(max-width:768px){
+  
+  }
+  
+`;
+
+
+
+
+
+
 
 const CarShowroomPage2B = () => {
-  const { cars } = useContext(Context);
+  const { cars, cars2 } = useContext(Context);
 const theme = useSelector((state)=>state.theme)
   const navigate = useNavigate();
   const observer = useRef(null);
@@ -157,24 +199,36 @@ const theme = useSelector((state)=>state.theme)
 
   return (
     <Container theme={theme === true ? lightTheme : darkTheme}>
-      {/* <h1 ref={observer}>Explore Our Cars</h1> */}
+
       <CarGrid>
+
         {cars.map((car) => (
           <CarCard
             key={car.id}
             theme={theme === true ? 'light' : 'dark'}
-            // onClick={() => navigate(`/car/${car.id}`)}
           >
             <CarImageThumb src={car.image} alt={car.name} />
-            <CarTitle theme={theme === true ? 'light' : 'dark'}>
-              {car.name}
-            </CarTitle>
-            {/* <p theme={theme === true ? lightTheme : darkTheme}>
-              Click to Explore...
-            </p> */}
           </CarCard>
         ))}
       </CarGrid>
+
+
+      <Hero6/>  
+
+      <CarGrid2>
+        {cars2.map((car) => (
+          <CarCard2
+            key={car.id}
+            theme={theme === true ? 'light' : 'dark'}
+          >
+            <CarImageThumb2 src={car.image} alt={car.name} />
+          </CarCard2>
+        ))}
+
+        </CarGrid2>
+
+
+
     </Container>
   );
 };

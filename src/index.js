@@ -40,6 +40,7 @@ import ContextProvider from './components/Context';
 import { unregister } from './serviceWorker';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
      <Provider store={store}>

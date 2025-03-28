@@ -24,6 +24,49 @@ import car21 from "../Images/car21.jpg";
 import car22 from "../Images/car22.jpg";
 import { useLocation } from 'react-router-dom';
 import globe from '../Images/globe.gif'
+import car2d from '../Images/car2d.jpeg'
+import car3d from '../Images/car3d.jpeg'
+import car4d from '../Images/car4d.jpeg'
+import car5d from "../Images/car5d.jpeg"
+import car6d from "../Images/car6d.jpeg"
+import car7d from "../Images/car7d.jpeg"
+import car11d from "../Images/car11d.jpg"
+// import car12d from "../Images/car12d.png"
+import car14d from "../Images/car14d.jpg"
+import car15d from "../Images/car15d.png"
+import car16d from "../Images/car16d.jpg";
+import car17d from "../Images/car17d.jpg";
+import car18d from "../Images/car18d.jpg";
+import car19d from "../Images/car19d.jpg";
+import car20d from "../Images/car20d.jpg";
+import car21d from "../Images/car21d.jpg";
+import car22d from "../Images/car22d.jpg";
+import car23d from "../Images/car23d.jpeg";
+import car24d from "../Images/car24d.jpeg";
+import car25d from "../Images/car25d.jpeg";
+import car26d from "../Images/car26d.jpeg";
+import car27d from "../Images/car27d.jpeg";
+import car28d from "../Images/car28d.jpeg";
+import car29d from "../Images/car29d.jpeg";
+import car30d from "../Images/car30d.jpeg";
+import car31d from "../Images/car31d.jpeg";
+import car32d from "../Images/car32d.jpeg";
+import car33d from "../Images/car33d.jpeg";
+
+import car35d from "../Images/car35d.jpeg";
+
+
+import carnow1 from "../Images2/carnow (1).jpeg";
+import carnow2 from "../Images2/carnow (2).jpeg";
+import carnow3 from "../Images2/carnow (3).jpeg";
+import carnow4 from "../Images2/carnowedited1.png";
+import carnow5 from "../Images2/carnow (5).jpeg";
+import carnow6 from "../Images2/carnow (6).jpeg";
+import carnow7 from "../Images2/carnow (7).jpeg";
+import carnow8 from "../Images2/carnow (8).jpeg";
+import carnow9 from "../Images2/carnow (9).jpeg";
+import carnow10 from "../Images2/carnow (10).jpeg";
+
 
 // Styled Components
 const HeroContainer = styled.section`
@@ -31,11 +74,17 @@ const HeroContainer = styled.section`
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 80vh;
+  height: 650px;
   background: linear-gradient(90deg, #0f172a, #1e293b);
   overflow: hidden;
   color: #ffffff;
-//   padding-top:100px;
+ 
+
+
+@media(max-width:768px){
+  height:250px;
+   padding-top:120px;
+}
 
 `;
 
@@ -85,9 +134,9 @@ const Slider = styled.div`
 
 const CarImage = styled.img`
   width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  object-position: bottom;  // This will align the image's bottom edge to the container's bottom edge
+  // height: 100vh;
+  // object-fit: cover;
+  // object-position: bottom;  // This will align the image's bottom edge to the container's bottom edge
   flex-shrink: 0;
 `;
 
@@ -102,7 +151,46 @@ const Hero4 = () => {
   const locattion = useLocation();
 
   const carImages = [
-    car1, car2, car3, car4, car5, car6, car7,car11,car12,car13,car14,car15,car16,car17,car18,car19,car20,car21,car22
+    car2d,
+    car3d,
+    car4d,
+    car5d,
+    car6d,
+    car7d,
+    car11d,
+    // car12d,
+    car14d,
+    car15d,
+    car16d,
+    car17d,
+    car18d,
+    car19d,
+    car20d,
+    car21d,
+    car22d,
+    car23d,
+    car24d,
+    car25d,
+    car26d,
+    car27d,
+    car28d,
+    car29d,
+    car30d,
+    car31d,
+  //   carnow1,
+  //   carnow2,
+  //   carnow3,
+  //   carnow4,
+  //   carnow5,
+  //   carnow6,
+  // carnow7,
+  // carnow8,
+  // carnow9,
+  // carnow10,
+    // car32d,
+    // car33d,
+    // car35d,
+    // car1, car2, car3, car4, car5, car6, car7,car11,car12,car13,car14,car15,car16,car17,car18,car19,car20,car21,car22
   ];
 
 

@@ -237,6 +237,24 @@ const Strong = styled.strong`
   color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : 'orangered')};
 `
 
+
+const ContactWrap = styled.div`
+  width:100%;
+  display:flex;
+  justify-item:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  gap:20px;
+  // padding:20px;
+
+  strong{
+  // color:yellow;
+  }
+`
+
+
+
 // Footer Component
 const Footer = () => {
   // const { theme } = useContext(Context);
@@ -247,7 +265,16 @@ const Footer = () => {
     <FooterContainer theme={theme === true ? 'light' : 'dark'}>
       <FooterContent>
         <FooterDescription>
-        <Strong theme={theme === true ? 'light' : 'dark'}>FAC Trade Track Ltd.</Strong> is more than a business; we are a movement driving Africa’s transformation. Our solutions not only address today’s challenges but also lay the foundation for a cleaner, smarter, and more prosperous future.  </FooterDescription>
+        <Strong theme={theme === true ? 'light' : 'dark'}>FAC Trade Track Ltd.</Strong> is more than a business; we are a movement driving Africa’s transformation. Our solutions not only address today’s challenges but also lay the foundation for a cleaner, smarter, and more prosperous future.  
+        </FooterDescription>
+        <FooterDescription>
+        <ContactWrap>
+          <p><strong>Address:</strong> Km 3 Apapa / Oshodi Exp. Way By Coker Bus stop.Coker Lagos Nigeria.</p>
+          <p><strong>Email:</strong> info@facafrica.com</p>
+          <p><strong>Phone:</strong> 08138842889</p>
+        </ContactWrap>
+        </FooterDescription>
+       
         <FooterLinks>
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/")}>Home</FooterLink>
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/aboutus")}>About Us</FooterLink>

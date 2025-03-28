@@ -127,7 +127,7 @@ const bounce = keyframes`
 const SwitchContainer = styled.div`
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   z-index: 1000;
   display: flex;
   flex-direction: column; /* Changed to column for vertical layout */
@@ -150,7 +150,7 @@ const SwitchContainer = styled.div`
   @media (max-width: 428px) {
     width: 30px;
     height: 100px;
-    right:5px;
+    left:5px;
     bottom:5px;
   }
 `;

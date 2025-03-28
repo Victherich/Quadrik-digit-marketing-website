@@ -190,7 +190,7 @@ const Header = () => {
   const location = useLocation();
 const theme = useSelector((state)=>state.theme)
 const sideMenuRef = useRef();
-const {loading,setLoading}=useContext(Context);
+const {loading,setLoading,location2,setLocation2}=useContext(Context);
 
 const [faclogo, setFaclogo]=useState(faclogo2)
 
@@ -229,6 +229,11 @@ useEffect(()=>{
     
         return () => clearTimeout(timeout); // Cleanup timeout
       }, [location.pathname]);
+
+
+      useEffect(()=>{
+          setLocation2(!location2)
+      },[location.pathname])
   
 
   return (

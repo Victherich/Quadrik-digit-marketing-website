@@ -18,6 +18,7 @@ import car22 from "../Images/car22.jpg";
 import Hero3 from './Hero3';
 import Hero from './Hero';
 import { useSelector } from 'react-redux';
+import car12b from '../Images/car12bc.png'
 
 // Animation keyframes for fading and sliding
 const fadeIn = keyframes`
@@ -130,11 +131,38 @@ const CarCard = styled.div`
   }
 `;
 
+// const CarImageThumb = styled.img`
+//   width: 100%;
+//   height: 250px;
+//   object-fit: cover;
+//   border-radius: 8px;
+// `;
+
 const CarImageThumb = styled.img`
   width: 100%;
   height: 250px;
-  object-fit: cover;
+  // object-fit: cover;
   border-radius: 8px;
+
+  //  &:nth-of-type(2) {
+  //   object-fit: contain;
+  // }
+
+  @media(max-width:768px){
+    height:170px;
+  }
+
+`;
+
+const CarImageThumb2 = styled.img`
+  width: 100%;
+  height: 250px;
+  // object-fit: cover;
+  border-radius: 8px;
+
+  //  &:nth-of-type(2) {
+  //   object-fit: contain;
+  // }
 `;
 
 const CarTitle = styled.p`
@@ -200,7 +228,7 @@ const theme = useSelector((state)=>state.theme)
           >
             <CarImageThumb src={car.image} alt={car.name} />
             <CarTitle theme={theme ===  true ? 'light' : 'dark'}>
-              {car.name}
+              {/* {car.name} */}
             </CarTitle>
             {/* <p
               theme={theme === true ? lightTheme : darkTheme}
@@ -209,7 +237,7 @@ const theme = useSelector((state)=>state.theme)
             </p> */}
           </CarCard>
         ))}
-
+      
         
       </CarGrid>
       <ExploreButton

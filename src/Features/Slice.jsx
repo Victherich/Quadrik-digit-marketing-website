@@ -8,6 +8,7 @@ const MySlice = createSlice({
     adminToken: null,
     userInfo: null,
     userToken: null,
+    hasRefreshed: false,
 
     cartItems: [], // Array of cart items
     totalQuantity: 0, // Total number of items in the cart
@@ -103,6 +104,11 @@ const MySlice = createSlice({
     toggleTheme: (state) => {
       state.theme = !state.theme; // Toggle between true and false
     },
+
+    setRefreshed: (state, action) => {
+      state.hasRefreshed = action.payload;
+    },
+
   },
 });
 
@@ -119,6 +125,7 @@ export const {
   updateCartQuantity,
   removeFromCart,
   toggleTheme, // Export the toggleTheme action
+  setRefreshed,
 } = MySlice.actions;
 
 export default MySlice.reducer;

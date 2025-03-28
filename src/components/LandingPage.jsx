@@ -8,13 +8,34 @@ import CoreOfferingsPage from './CoreOfferingsPage'
 import WhyPartnerWithUs from './WhyPartnerWithUs'
 import CarShowroomPage from './CarShowRoomPage'
 import Hero3 from './Hero3'
+import { useState, useEffect } from 'react'
+
 
 const LandingPage = () => {
+
+  const [reRender,setRerender]=useState(true)
+  console.log(reRender, "rerender")
+ 
+  useEffect(()=>{
+ 
+     const interalId = setTimeout(()=>{
+         setRerender(false);
+     },400)
+ 
+     const interalId2 = setTimeout(()=>{
+         setRerender(true)
+     },1000)
+ 
+     return ()=>{clearInterval(interalId) ; clearInterval(interalId2)}
+ 
+   },[])
+ 
+
+
   return (
-    <div>
+  reRender&&<div>
 
       <Hero/>
-      
       <AboutUsPreview/>
       <CoreOfferingsPage/>
       <Hero3/>

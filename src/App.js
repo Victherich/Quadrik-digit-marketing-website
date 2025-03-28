@@ -17,28 +17,44 @@ import BrandAndTechnology from './components/BrandAndTechnology';
 import { useContext, useEffect , useState} from 'react';
 import Snowfall2 from './components/snowFall';
 import { Context } from './components/Context';
-// import Snowfall from 'react-snowflakes';
-// import Particles from 'react-particles-js';
+import AutoRefresh from './components/AutoRefresh';
+
 import LoadingSpinner from './components/LoadingSpinner';
+import LiveChat from './components/Chat';
 
 function App() {
 
   
-  const {loading,setLoading}=useContext(Context)
+  const {loading,setLoading,location2}=useContext(Context)
 
  
- 
+  const [reRender,setRerender]=useState(true)
+ console.log(reRender, "rerender")
+
+ useEffect(()=>{
+
+    const interalId = setTimeout(()=>{
+        setRerender(false)
+    },200)
+
+    const interalId2 = setTimeout(()=>{
+        setRerender(true)
+    },1000)
+
+    return ()=>{clearInterval(interalId) ; clearInterval(interalId2)}
+
+  },[])
 
 
   return (
   <BrowserRouter>
   <ScrollToTop/>
   <Snowfall2/>
-
-  <Header/>
+{/* {<AutoRefresh/>} */}
+  {reRender&&<Header/>}
  
   {loading && <LoadingSpinner onComplete={() => setLoading(false)} />}
-  <Routes>
+ { reRender&&<Routes>
       <Route path='/' element={<LandingPage/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/autotrendingnews' element={<AutoTrendingNews/>}/>
@@ -46,12 +62,13 @@ function App() {
      <Route path='/contactus' element={<ContactUs/>}/>
      <Route path='/servicesandsupport' element={<ServicesAndSupport/>}/>
      <Route path='/brandandtechnology' element={<BrandAndTechnology/>}/>
-    </Routes>
+    </Routes>}
 
    
-    <ThemeSwitch/>
-    <Hero2/>
-    <Footer/>
+   {reRender&& <ThemeSwitch/>}
+   { reRender&& <Hero2/>}
+    {reRender && <Footer/>}
+    <LiveChat/>
   </BrowserRouter>
     
     
