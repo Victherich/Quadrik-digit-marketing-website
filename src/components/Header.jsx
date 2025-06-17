@@ -4,15 +4,15 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { FaBars, FaTimes, FaCar } from 'react-icons/fa';
-import carlogo from '../Images/carlogo.jpeg';
-import smallCar from '../Images/car5Flip.png';
-import smallCar2 from '../Images/smallcar2.png';
-import smallCar3 from '../Images/smallcar3.png';
+import carlogo from '../Images4/logo.jpeg';
+import smallCar from '../Images4/laptop.png';
+import smallCar2 from '../Images4/qdm.png';
+import smallCar3 from '../Images4/laptop2.png';
 import { Context } from './Context';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import faclogo2 from '../Images/faclogo2.png';
-import faclogo1 from '../Images/faclogo.jpeg'
+import faclogo2 from '../Images4/logo.jpeg';
+import faclogo1 from '../Images4/logo.jpeg'
 
 // Animation Keyframes
 const fadeIn = keyframes`
@@ -118,9 +118,9 @@ const Nav = styled.nav`
 `;
 
 const NavItem = styled.a`
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-decoration: none;
-  color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : 'orangered')};
+  color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#7611D1')};
   cursor: pointer;
   transition: color 0.3s;
   font-weight:500;
@@ -142,13 +142,13 @@ const Hamburger = styled.div`
 `;
 
 const Img = styled.img`
-  width: 150px;
+  width: 50px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 50%;
 `;
 
 const FastCar = styled.img`
-  width: 80px;
+  width: 50px;
   height: auto;
   animation: ${slideFastContinuous} 5s linear infinite;
    position: absolute; /* To layer the cars within the container */
@@ -256,10 +256,10 @@ useEffect(()=>{
       <Nav isOpen={isMenuOpen} theme={theme === true ? 'light' : 'dark'} ref={sideMenuRef}>
         <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => {navigate('/');window.scroll(0,0);setIsMenuOpen(false)}}>Home</NavItem>
         <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() => {navigate('/aboutus');setIsMenuOpen(false)}}>About Us</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/carshowroompage2');setIsMenuOpen(false)}}>Show Room</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>{navigate('/servicesandsupport');setIsMenuOpen(false)}}>Services & Support</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/brandandtechnology');setIsMenuOpen(false)}}>Brands & Technology</NavItem>
-        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() =>{ navigate("/autotrendingnews");setIsMenuOpen(false)}}>Auto Trending News</NavItem>
+        {/* <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/carshowroompage2');setIsMenuOpen(false)}}>Show Room</NavItem> */}
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>{navigate('/services');setIsMenuOpen(false)}}>Services</NavItem>
+        {/* <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=> {navigate('/brandandtechnology');setIsMenuOpen(false)}}>Brands & Technology</NavItem> */}
+        <NavItem theme={theme === true ? 'light' : 'dark'} onClick={() =>{ navigate("/blogs");setIsMenuOpen(false)}}>Blogs</NavItem>
         <NavItem theme={theme === true ? 'light' : 'dark'} onClick={()=>{navigate("/contactus");setIsMenuOpen(false)}}>Contact Us</NavItem>
       </Nav>
     </HeaderContainer>

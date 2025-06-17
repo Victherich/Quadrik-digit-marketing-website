@@ -7,26 +7,20 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';  
-import car1 from '../Images/car1.jpeg';
-import car2 from '../Images/car2.jpeg';
-import car3 from '../Images/car3.jpeg';
-import car4 from '../Images/car4.jpeg';
-import car5 from '../Images/car5.jpeg';
-import car6 from '../Images/car6.jpeg';
-import car7 from '../Images/car7.jpeg';
-import car10 from "../Images/car10.jpg";
-import car11 from "../Images/car11.jpg";
-import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car15.png";
-import car14 from "../Images/car14.jpg";
-import car15 from "../Images/car15.png";
-import car16 from "../Images/car16.jpg";
-import car17 from "../Images/car17.jpg";
-import car18 from "../Images/car18.jpg";
-import car19 from "../Images/car19.jpg";
-import car20 from "../Images/car20.jpg";
-import car21 from "../Images/car21.jpg";
-import car22 from "../Images/car22.jpg";
+import car1 from '../Images4/p1.jpg';
+import car2 from '../Images4/p2.jpg';
+import car3 from '../Images4/p3.jpg';
+import car4 from '../Images4/p4.jpg';
+import car5 from '../Images4/bgdark.png';
+import car6 from '../Images4/p6.jpg';
+import car7 from '../Images4/p7.jpg';
+import car8 from '../Images4/p8.jpg';
+import car9 from '../Images4/p9.jpg';
+import car10 from "../Images4/p10.png";
+import car11 from "../Images4/p11.jpg";
+import car12 from "../Images4/p12.jpg";
+
+import car22 from "../Images4/bglight.png";
 import { Context } from './Context';
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
@@ -113,7 +107,7 @@ const theme = useSelector((state)=>state.theme)
   const [position, setPosition] = useState(0);
 
   const carImages = [
-    car1, car2, car3, car4, car5, car6, car7, car1, car10,car11,car12,car13,car14,car15,car16,car17,car18,car19,car20,car21,car22
+    car1, car2, car3, car4, car6, car7,car8,car9, car10,car11,car12
   ];
 
   useEffect(() => {

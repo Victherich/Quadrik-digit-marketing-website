@@ -3,12 +3,13 @@ import Header from './Header'
 import Footer from './Footer'
 import Hero from './Hero'
 import AboutUsPreview from './AboutUsPreview'
-import AutoTrendingSummary from './AutoTrendingSummary'
+import AutoTrendingSummary from './QDB_BlogSummary'
 import CoreOfferingsPage from './CoreOfferingsPage'
 import WhyPartnerWithUs from './WhyPartnerWithUs'
 import CarShowroomPage from './CarShowRoomPage'
 import Hero3 from './Hero3'
 import { useState, useEffect } from 'react'
+import IndustriesWeServe from './IndustriesWeServe'
 
 
 const LandingPage = () => {
@@ -43,7 +44,7 @@ const LandingPage = () => {
       <AutoTrendingSummary/>
       <WhyPartnerWithUs/>
 
-
+<IndustriesWeServe/>
 
     </div>
   )

@@ -6,9 +6,9 @@ import styled from 'styled-components';
 import { Context } from './Context'; // Assuming you have a theme context
 
 // Background Image
-import contactBackground from '../Images/car2.jpeg';
-import contactBackground2 from '../Images/car15.png';
-import carLogo from '../Images/carlogo.jpeg'
+import contactBackground from '../Images4/p3.jpg';
+import contactBackground2 from '../Images4/p8.jpg';
+import carLogo from '../Images4/logo.jpeg'
 import { useSelector } from 'react-redux';
 import Swal from 'sweetalert2'
 
@@ -16,9 +16,10 @@ import Swal from 'sweetalert2'
 const lightTheme = {
   background: 'linear-gradient(180deg, #f8fafc, #e2e8f0)',
   text: '#1e293b',
-  primary: '#FF7133',
+  primary: '#7611D1',
+  primary2:'white',
   secondary: '#eab308',
-  inputBackground: 'rgba(255,255,255,0.3)',
+  inputBackground: 'rgba(255,255,255,0.5)',
   inputTextColor: '#333',
   
 };
@@ -26,13 +27,14 @@ const lightTheme = {
 const darkTheme = {
   background: 'linear-gradient(180deg, #1e293b, #0f172a)',
   text: '#ffffff',
-  primary: '#fbbf24',
+  primary: '#FDE910',
+  primary2:"#FDE910",
   secondary: '#eab308',
   inputBackground: 'rgba(30, 41, 59, 0.3)',
   inputTextColor: '#e2e8f0',
 
 };
-
+// '#FDE910' : '#7611D1'
 // Styled Components
 const ContactContainer = styled.div`
    background-image: url(${({ theme }) => (theme === 'dark' ? contactBackground : contactBackground2)});
@@ -62,10 +64,16 @@ const FormWrapper = styled.div`
 const FormTitle = styled.h2`
   font-size: 2.5rem;
   text-align: center;
-  color: ${({ theme }) => theme.primary};
+  color: ${({ theme }) => theme.primary2};
   margin-bottom: 1rem;
   font-weight: bold;
+
+  text-shadow: ${({ theme }) =>
+    theme === 'dark'
+      ? '2px 2px 6px rgba(0, 0, 0, 1)'
+      : '1px 1px 4px rgba(100, 100, 100, 1)'};
 `;
+
 
 const InputGroup = styled.div`
   margin-bottom: 1.5rem;
@@ -255,9 +263,9 @@ const ContactUs = () => {
         </form>
         <ContactWrap>
           
-          <p><strong>Address:</strong> Km 3 Apapa / Oshodi Exp. Way By Coker Bus stop.Coker Lagos Nigeria.</p>
-          <p><strong>Email:</strong> info@facafrica.com</p>
-          <p><strong>Phone:</strong> 08138842889</p>
+          <p><strong>Address:</strong> Royal Class Dip 1 Dubai, UAE.</p>
+          <p><strong>Email:</strong> info@quadrikdigitmarketing.ae</p>
+          <p><strong>Phone:</strong>  +971528895565, +971586805073</p>
         </ContactWrap>
       </FormWrapper>
     </ContactContainer>

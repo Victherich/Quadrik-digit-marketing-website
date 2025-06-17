@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 // import logo from '../Images/carlogo.jpeg'; // Replace with the path to your car logo image
-import logo from '../Images/logo4.png'; 
+import logo from '../Images4/qdm.png'; 
 
 // Keyframes for spinning animation
 const spin = keyframes`

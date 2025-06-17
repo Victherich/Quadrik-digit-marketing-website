@@ -199,11 +199,12 @@ const FooterLinks = styled.div`
 `;
 
 const FooterLink = styled.a`
-  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : 'orangered')};
+  color: ${({ theme }) => (theme === 'dark' ? '#FDE910' : '#7611D1')};
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
   cursor: pointer;
+  font-weight:bold;
 
   &:hover {
     text-decoration: underline;
@@ -216,7 +217,7 @@ const SocialIcons = styled.div`
 
   svg {
     font-size: 1.5rem;
-    color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : 'orangered')};
+    color: ${({ theme }) => (theme === 'dark' ? '#FDE910' : '#7611D1')};
     transition: transform 0.3s, color 0.3s;
 
     &:hover {
@@ -234,7 +235,7 @@ const Copyright = styled.p`
 `;
 
 const Strong = styled.strong`
-  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : 'orangered')};
+  color: ${({ theme }) => (theme === 'dark' ? '#FDE910' : '#7611D1')};
 `
 
 
@@ -264,23 +265,25 @@ const Footer = () => {
   return (
     <FooterContainer theme={theme === true ? 'light' : 'dark'}>
       <FooterContent>
-        <FooterDescription>
-        <Strong theme={theme === true ? 'light' : 'dark'}>FAC Trade Track Ltd.</Strong> is more than a business; we are a movement driving Africa’s transformation. Our solutions not only address today’s challenges but also lay the foundation for a cleaner, smarter, and more prosperous future.  
-        </FooterDescription>
+       <FooterDescription>
+  <Strong theme={theme === true ? 'light' : 'dark'}>Qaudrik Digital Marketing Management FZ-LLC</Strong> isn't just a company — it's a global catalyst for digital transformation. We deliver forward-thinking solutions that transcend borders, empowering businesses worldwide to thrive in a smarter, more connected, and innovation-driven future.
+</FooterDescription>
+
         <FooterDescription>
         <ContactWrap>
-          <p><strong>Address:</strong> Km 3 Apapa / Oshodi Exp. Way By Coker Bus stop.Coker Lagos Nigeria.</p>
-          <p><strong>Email:</strong> info@facafrica.com</p>
-          <p><strong>Phone:</strong> 08138842889</p>
+          <p><strong>Address:</strong> Royal Class Dip 1 Dubai, UAE.</p>
+          <p><strong>Email:</strong> info@quadrikdigitmarketing.ae</p>
+          <p><strong>Phone:</strong> +971528895565, +971586805073</p>
         </ContactWrap>
         </FooterDescription>
        
         <FooterLinks>
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/")}>Home</FooterLink>
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/aboutus")}>About Us</FooterLink>
-          <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/carshowroompage2")}>Show Room</FooterLink>
-          <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/")}>Terms and Conditions</FooterLink>
-          <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/")}>Privacy Policy</FooterLink>
+          <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/services")}>Services</FooterLink>
+                 <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/blogs")}>Blogs</FooterLink>
+          <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/termsandconditions")}>Terms and Conditions</FooterLink>
+          {/* <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/")}>Privacy Policy</FooterLink> */}
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/contactus")}>Contact us</FooterLink>
         </FooterLinks>
         <SocialIcons theme={theme === true ? 'light' : 'dark'}>
@@ -299,12 +302,13 @@ const Footer = () => {
         </SocialIcons>
       </FooterContent>
 
-      <Copyright>
-      Join us in shaping the future of transportation, energy, and infrastructure across Africa. Together, we can create a continent that thrives sustainably.
-      </Copyright>
-      <Copyright>
-        © {new Date().getFullYear()} FAC TRADE TRACK LTD. All Rights Reserved.
-      </Copyright>
+    <Copyright>
+  Join us in shaping the future of digital innovation, marketing, and business transformation worldwide. Together, we empower a smarter and more connected global economy.
+</Copyright>
+<Copyright>
+  © {new Date().getFullYear()} Qaudrik Digital Marketing Management FZ-LLC. All Rights Reserved.
+</Copyright>
+
       {/* <Copyright>
         © {new Date().getFullYear()} FAC TRADE TRACK LTD. All Rights Reserved.
       </Copyright> */}

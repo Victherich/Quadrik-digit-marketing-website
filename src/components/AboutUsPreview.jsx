@@ -223,20 +223,20 @@
 
 import React, { useEffect, useRef, useContext } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { FaArrowRight, FaCarSide } from 'react-icons/fa';
-import car10 from "../Images/car10.jpg";
-import car11 from "../Images/car11.jpg";
-import car12 from "../Images/car12.jpg";
-import car13 from "../Images/car15.png";
-import car14 from "../Images/car14.jpg";
-import car15 from "../Images/car15.png";
-import car16 from "../Images/car16.jpg";
-import car17 from "../Images/car17.jpg";
-import car18 from "../Images/car18.jpg";
-import car19 from "../Images/car19.jpg";
-import car20 from "../Images/car20.jpg";
-import car21 from "../Images/car21.jpg";
-import car22 from "../Images/car22.jpg";
+import { FaArrowRight, FaCarSide, FaGlobe } from 'react-icons/fa';
+import car10 from "../Images4/p1.jpg";
+import car11 from "../Images4/p2.jpg";
+import car12 from "../Images4/p3.jpg";
+import car13 from "../Images4/p4.jpg";
+import car14 from "../Images4/p5.jpg";
+import car15 from "../Images4/p6.jpg";
+import car16 from "../Images4/p7.jpg";
+import car17 from "../Images4/p8.jpg";
+import car18 from "../Images4/p9.jpg";
+import car19 from "../Images4/p10.png";
+// import car20 from "../Images/car20.jpg";
+// import car21 from "../Images/car21.jpg";
+// import car22 from "../Images/car22.jpg";
 import { Context } from './Context';
 import { useNavigate } from 'react-router-dom';
 import 'animate.css'; // For animations
@@ -291,9 +291,9 @@ const TitleText = styled.h2`
   z-index: 2;
   font-size: 2.5rem;
   font-weight: bold;
-  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : '#FF7133')};
+  color: ${({ theme }) => (theme === 'dark' ? 'white' : 'white')};
   text-align: center;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 
   @media (max-width: 768px) {
     font-size: 2rem;
@@ -336,14 +336,14 @@ const Column = styled.div`
 const IconWrapper = styled.div`
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : '#FF7133')};
+  color: ${({ theme }) => (theme === 'dark' ? 'white' : '#7611D1')};
 `;
 
 const Title = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.5rem;#fbbf24
   font-weight: bold;
   margin-bottom: 1rem;
-  color: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : '#FF7133')};
+  color: ${({ theme }) => (theme === 'dark' ? '#FDE910' : '#7611D1')};
 `;
 
 const Text = styled.p`
@@ -358,7 +358,7 @@ const Button = styled.a`
   margin-top: 1rem;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
-  color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : '#1e293b')};
+  color: ${({ theme }) => (theme === 'dark' ? '#ffffff' : 'white')};
   background: ${({ theme }) => (theme === 'dark' ? '#fbbf24' : '#eab308')};
   border: none;
   border-radius: 4px;
@@ -476,7 +476,7 @@ const theme = useSelector((state)=>state.theme)
   return (
     <Container theme={theme === true ? 'light' : 'dark'}>
       <TitleSection theme={theme === true ? 'light' : 'dark'}>
-        <TitleText theme={theme === true ? 'light' : 'dark'}>Learn More About Us</TitleText>
+        <TitleText theme={theme === true ? 'light' : 'dark'}>About  QDM</TitleText>
         <SlidingImages>
           <CarImage src={car10} alt="Car 10" />
           <CarImage src={car11} alt="Car 11" />
@@ -488,32 +488,30 @@ const theme = useSelector((state)=>state.theme)
            <CarImage src={car17} alt="Car 17" />
            <CarImage src={car18} alt="Car 18" />
            <CarImage src={car19} alt="Car 19" />
-           <CarImage src={car20} alt="Car 20" />
+           {/* <CarImage src={car20} alt="Car 20" />
            <CarImage src={car21} alt="Car 21" />
-           <CarImage src={car22} alt="Car 22" />
+           <CarImage src={car22} alt="Car 22" /> */}
         </SlidingImages>
       </TitleSection>
 
       <ContentSection>
         <Column theme={theme === true ? 'light' : 'dark'}>
           <IconWrapper theme={theme === true ? 'light' : 'dark'}>
-            <FaCarSide />
+            <FaGlobe />
           </IconWrapper>
-          <Title theme={theme === true ? 'light' : 'dark'}>Our Vision</Title>
+          <Title theme={theme === true ? 'light' : 'dark'}>QDM</Title>
           <Text>
-            To pioneer transformative infrastructure, transportation, and clean energy projects that position Africa as
-            a leader in sustainable development.
+           Quadirk Digit Marketing is a creative digital agency based in the UAE, helping businesses grow through smart strategies and impactful designs. We specialize in social media management, content creation, digital ads, branding, and web development.
           </Text>
         </Column>
 
         <Column theme={theme === true ? 'light' : 'dark'}>
           <IconWrapper theme={theme === true ? 'light' : 'dark'}>
-            <FaCarSide />
+            <FaGlobe />
           </IconWrapper>
           <Title theme={theme === true ? 'light' : 'dark'}>Our Mission</Title>
           <Text>
-            FAC Trade Track Ltd. introduces cutting-edge technologies like electric vehicles, solar-powered charging
-            stations, and CNG-powered trucks to the African market.
+            Our mission is to empower businesses with innovative digital solutions that drive real results. We are committed to helping brands establish a strong online presence through expert social media management, targeted advertising, creative content, and impactful design. By combining strategy, creativity, and technology, we aim to deliver measurable growth and long-term value for every client we serve.
           </Text>
         </Column>
       </ContentSection>

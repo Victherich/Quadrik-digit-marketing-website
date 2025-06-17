@@ -2,16 +2,16 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';  
-import car1 from '../Images/car1.jpeg';
-import car2 from '../Images/car2.jpeg';
-import car3 from '../Images/car3.jpeg';
-import car4 from '../Images/car4.jpeg';
-import car5 from '../Images/car5.jpeg';
-import car6 from '../Images/car6.jpeg';
-import car7 from '../Images/car7.jpeg';
-import car12 from '../Images/car12.jpg';
-import car13 from '../Images/car15.png';
-import car22 from '../Images/car22.jpg';
+import car1 from '../Images4/p1.jpg';
+import car2 from '../Images4/p2.jpg';
+import car3 from '../Images4/p3.jpg';
+import car4 from '../Images4/p4.jpg';
+import car5 from '../Images4/p5.jpg';
+import car6 from '../Images4/p6.jpg';
+import car7 from '../Images4/p7.jpg';
+import car8 from '../Images4/p8.jpg';
+import car9 from '../Images4/p9.jpg';
+import car10 from '../Images4/p10.png';
 import car21 from '../Images/car21.jpg';
 import car18 from '../Images/car18.jpg';
 import { useSelector } from 'react-redux';
@@ -28,7 +28,16 @@ const HeroContainer = styled.section`
   background: linear-gradient(90deg, #0f172a, #1e293b);
   overflow: hidden;
   color: #ffffff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3); /* overlay */
+    z-index: 2; /* sits above images but below content */
+  }
 `;
+
 
 const HeroContent = styled.div`
   position: absolute;
@@ -40,11 +49,12 @@ const HeroContent = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
-  color: #fbbf24;
+  // color: #fbbf24;
+  color:white;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
   opacity: 0;
   transform: translateY(50px);
   animation: ${(props) => props.isVisible ? 'flyInFromBottom 3s ease-out forwards' : 'none'};
@@ -77,7 +87,7 @@ const HeroSubtitle = styled.p`
   opacity: 0;
   transform: translateY(-50px);
   animation: ${(props) => props.isVisible ? 'flyInFromTop 1s ease-out forwards' : 'none'};
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
 
   @media (max-width: 768px) {
     font-size: 1.2rem;
@@ -121,8 +131,8 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const theme = useSelector((state)=>state.theme)
 
-  const carImages1 = [car1, car2, car3, car4, car5, car6, car7];
-  const carImages2 = [ car13, car22, car21, car18];
+  const carImages1 = [car1, car2, car3, car5, car6, car8, car9, car10];
+  const carImages2 = [ car1, car2, car3, car5, car6, car8, car9, car10];
 
   const [carImages,setCarImages]=useState(carImages2)
 
@@ -173,9 +183,9 @@ const Hero = () => {
   return (
     <HeroContainer ref={sliderRef}>
       <HeroContent>
-        <HeroTitle isVisible={isVisible}>FAC TRADE TRACK LTD</HeroTitle>
+        <HeroTitle isVisible={isVisible}>QUADRIK DIGIT MARKETING [QDM]</HeroTitle>
         <HeroSubtitle isVisible={isVisible}>
-          Transforming Africa’s Transportation, Infrastructure & Energy Landscape.
+          Your Brand, Our Strength, Real Growth
         </HeroSubtitle>
       </HeroContent>
       <Slider

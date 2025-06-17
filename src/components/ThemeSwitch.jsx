@@ -112,6 +112,7 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import { Context } from './Context';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleTheme } from '../Features/Slice';
+import { useLocation } from 'react-router-dom';
 
 // Animation for the switch toggle
 const bounce = keyframes`
@@ -198,11 +199,16 @@ const VerticalThemeSwitch = () => {
   // const { theme, setTheme } = useContext(Context);
   const dispatch = useDispatch()
   const theme = useSelector((state)=>state.theme)
+  const location = useLocation();
 
   // const toggleTheme = () => {
   //   setTheme((prev) => !prev);
   // };
 
+
+if(location.pathname.includes('admin')){
+  return;
+}
 
   
 
