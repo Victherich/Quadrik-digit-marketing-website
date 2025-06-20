@@ -366,8 +366,8 @@ const AdminLogin = () => {
           />
           <Button type="submit">Login</Button>
         </form>
-        {/* <RegisterText onClick={() => navigate("/adminsignup")}>
-          Don't have an account? Register
+        {/* <RegisterText onClick={() => navigate("/adminforgotpassword")}>
+          Forgot Password
         </RegisterText> */}
 
       </FormWrapper>

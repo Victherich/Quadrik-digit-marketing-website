@@ -107,7 +107,7 @@ const theme = useSelector((state)=>state.theme)
   const [position, setPosition] = useState(0);
 
   const carImages = [
-    car1, car2, car3, car4, car6, car7,car8,car9, car10,car11,car12
+    car1,  car3, car4, car6, car7,car8,car9, car10,car11,car12
   ];
 
   useEffect(() => {

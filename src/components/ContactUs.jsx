@@ -175,34 +175,75 @@ const ContactUs = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-      Swal.fire({text:"Please wait..."});
-      Swal.showLoading();
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //     Swal.fire({text:"Please wait..."});
+  //     Swal.showLoading();
   
-    try {
-      const response = await fetch("https://facafrica.com/api/contact_form_endpoint.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+  //   try {
+  //     const response = await fetch("https://facafrica.com/api/contact_form_endpoint.php", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(formData),
+  //     });
   
-      const data = await response.json();
+  //     const data = await response.json();
   
-      if (data.success) {
-        Swal.fire({text:"✅ Your message has been sent successfully!"});
-        setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
-      } else {
-        Swal.fire({text:`❌ Error: ${data.error}`});
-      }
-    } catch (error) {
-      Swal.fire({text:"❌ Network error, please try again."});
-      console.error("Error submitting form:", error);
-    }
+  //     if (data.success) {
+  //       Swal.fire({text:"✅ Your message has been sent successfully!"});
+  //       setFormData({ name: "", email: "", phone: "", message: "" }); // Clear form
+  //     } else {
+  //       Swal.fire({text:`❌ Error: ${data.error}`});
+  //     }
+  //   } catch (error) {
+  //     Swal.fire({text:"❌ Network error, please try again."});
+  //     console.error("Error submitting form:", error);
+  //   }
+  // };
+  
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  Swal.fire({ text: "Please wait..." });
+  Swal.showLoading();
+
+  const payload = {
+    ...formData,
+    recipientEmail: "qm@qaudrikdigitmarketing.com",
+    websiteName: "Qaudrik Digit Marketing"
   };
-  
+
+  console.log(payload)
+
+  try {
+    // const response = await fetch("http://localhost:3000/api/contact", {
+          const response = await fetch("https://backend-mailer-1.vercel.app/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      Swal.fire({ text: "✅ Your message has been sent successfully and we shall get back to you soon!", icon:"success" });
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      Swal.fire({ text: `❌ Error: ${data.error}` });
+    }
+  } catch (error) {
+    Swal.fire({ text: "❌ Network error, please try again." });
+    console.error("Error submitting form:", error);
+  }
+};
+
+
+
 
   return (
     <ContactContainer theme={theme === true ? 'light' : 'dark'} >
@@ -264,7 +305,7 @@ const ContactUs = () => {
         <ContactWrap>
           
           <p><strong>Address:</strong> Royal Class Dip 1 Dubai, UAE.</p>
-          <p><strong>Email:</strong> info@quadrikdigitmarketing.ae</p>
+          <p><strong>Email:</strong> qm@qaudrikdigitmarketing.com</p>
           <p><strong>Phone:</strong>  +971528895565, +971586805073</p>
         </ContactWrap>
       </FormWrapper>

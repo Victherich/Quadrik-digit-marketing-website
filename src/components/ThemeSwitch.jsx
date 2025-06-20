@@ -127,7 +127,7 @@ const bounce = keyframes`
 // Styled components for the switch
 const SwitchContainer = styled.div`
   position: fixed;
-  bottom: 20px;
+  bottom: 60px;
   left: 20px;
   z-index: 1000;
   display: flex;
@@ -152,7 +152,7 @@ const SwitchContainer = styled.div`
     width: 30px;
     height: 100px;
     left:5px;
-    bottom:5px;
+    // bottom:5px;
   }
 `;
 

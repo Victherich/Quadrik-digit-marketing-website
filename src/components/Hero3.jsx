@@ -5,7 +5,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';  
 import car1 from '../Images4/p1.jpg';
-import car2 from '../Images4/p2.jpg';
+// import car2 from '../Images4/p2.jpg';
 import car3 from '../Images4/p3.jpg';
 import car4 from '../Images4/p4.jpg';
 import car5 from '../Images4/p5.jpg';
@@ -103,7 +103,7 @@ const Hero3 = () => {
   const locattion = useLocation();
 
   const carImages = [
-  car1,car2, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12 
+  car1, car3, car4, car5, car6, car7, car8, car9, car10, car11, car12 
   
   ];
 

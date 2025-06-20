@@ -32,6 +32,8 @@ import AdminResetPassword from './components/AdminResetPassword';
 import TermsAndConditions from './components/TermsAndConditions';
 import HostingExpiryGuard from './components/HostingExpiryGuard';
 import AppUpdate from './components/AppUpdate';
+import GoogleTranslate from './components/GoogleTranslate';
+import wp from './Images4/whatsapplogo.png';
 
 function App() {
 
@@ -59,15 +61,16 @@ function App() {
 
   return (
   <BrowserRouter>
+  <GoogleTranslate/>
   <ScrollToTop/>
   <Snowfall2/>
   <HostingExpiryGuard/>
   <AppUpdate/>
 {/* {<AutoRefresh/>} */}
-  {reRender&&<Header/>}
+  <Header/>
  
   {loading && <LoadingSpinner onComplete={() => setLoading(false)} />}
- { reRender&&<Routes>
+ <Routes>
       <Route path='/' element={<LandingPage/>}/>
       <Route path='/aboutus' element={<AboutUs/>}/>
       <Route path='/services' element={<CoreOfferingsPage/>}/>
@@ -94,14 +97,15 @@ function App() {
 
 
 
-    </Routes>}
+    </Routes>
 
  
 
-   
-   {reRender&& <ThemeSwitch/>}
-   { reRender&& <Hero2/>}
-    {reRender && <Footer/>}
+   <a><img src={wp} alt="logo" className="WhatsAppIcon" onClick={() => window.open("https://wa.me/971528895565", "_blank")} /></a> 
+     
+    <ThemeSwitch/>
+    <Hero2/>
+    <Footer/>
     <LiveChat/>
   </BrowserRouter>
     

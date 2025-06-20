@@ -344,7 +344,7 @@ const SlidingImages = styled.div`
   position: absolute;
   width: 100%;
   height: 100%; /* Ensure it fills the hero section */
-  animation: ${slide} 50s linear infinite;
+  animation: ${slide} 10s linear infinite;
   flex-direction: column;
 `;
 

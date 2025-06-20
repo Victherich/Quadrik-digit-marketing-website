@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';  
 import car1 from '../Images4/p1.jpg';
-import car2 from '../Images4/p2.jpg';
+// import car2 from '../Images4/p2.jpg';
 import car3 from '../Images4/p3.jpg';
 import car4 from '../Images4/p4.jpg';
 import car5 from '../Images4/p5.jpg';
@@ -33,7 +33,7 @@ const HeroContainer = styled.section`
     content: '';
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.3); /* overlay */
+    background: rgba(0, 0, 0, 0.2); /* overlay */
     z-index: 2; /* sits above images but below content */
   }
 `;
@@ -131,8 +131,8 @@ const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
   const theme = useSelector((state)=>state.theme)
 
-  const carImages1 = [car1, car2, car3, car5, car6, car8, car9, car10];
-  const carImages2 = [ car1, car2, car3, car5, car6, car8, car9, car10];
+  const carImages1 = [car1, car3, car5, car6, car8, car9, car10];
+  const carImages2 = [ car1, car3, car5, car6, car8, car9, car10];
 
   const [carImages,setCarImages]=useState(carImages2)
 

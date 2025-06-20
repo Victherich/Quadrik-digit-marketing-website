@@ -272,7 +272,7 @@ const Footer = () => {
         <FooterDescription>
         <ContactWrap>
           <p><strong>Address:</strong> Royal Class Dip 1 Dubai, UAE.</p>
-          <p><strong>Email:</strong> info@quadrikdigitmarketing.ae</p>
+          <p><strong>Email:</strong> qm@qaudrikdigitmarketing.com</p>
           <p><strong>Phone:</strong> +971528895565, +971586805073</p>
         </ContactWrap>
         </FooterDescription>
@@ -287,16 +287,16 @@ const Footer = () => {
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/contactus")}>Contact us</FooterLink>
         </FooterLinks>
         <SocialIcons theme={theme === true ? 'light' : 'dark'}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/munirudeen.abdulqaudir?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
             <FaFacebook />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/qaudrikdigitmarketing?igsh=a3gwanRueDVzNGFt&utm_source=qr" target="_blank" rel="noopener noreferrer">
             <FaInstagram />
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/munirudeen-quadri-975559324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
         </SocialIcons>

@@ -251,7 +251,7 @@ const lightColors = {
 
 // Styled Components
 const DashboardContainer = styled.div`
-padding-top:70px;
+// padding-top:70px;
   display: flex;
   min-height: 100vh;
   background-color: ${lightColors.mainBackground}; /* Light mode background */
