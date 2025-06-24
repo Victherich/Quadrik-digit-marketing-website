@@ -10,6 +10,7 @@ import CarShowroomPage from './CarShowRoomPage'
 import Hero3 from './Hero3'
 import { useState, useEffect } from 'react'
 import IndustriesWeServe from './IndustriesWeServe'
+import LandingPagePackages from './LandingPagePackages'
 
 
 const LandingPage = () => {
@@ -38,6 +39,7 @@ const LandingPage = () => {
 
       <Hero/>
       <AboutUsPreview/>
+      <LandingPagePackages/>
       <CoreOfferingsPage/>
       <Hero3/>
       <CarShowroomPage/>
