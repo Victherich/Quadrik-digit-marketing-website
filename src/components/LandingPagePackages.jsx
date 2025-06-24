@@ -325,13 +325,13 @@ const LandingPagePackages = () => {
 
   const fetchPackages = async () => {
     setLoading(true);
-    Swal.fire({
-      title: 'Journeying through the cosmos...',
-      allowOutsideClick: false,
-      didOpen: () => Swal.showLoading(),
-      background: spaceThemeColors.mainBackground,
-      color: spaceThemeColors.mainText,
-    });
+    // Swal.fire({
+    //   title: 'Journeying through the cosmos...',
+    //   allowOutsideClick: false,
+    //   didOpen: () => Swal.showLoading(),
+    //   background: spaceThemeColors.mainBackground,
+    //   color: spaceThemeColors.mainText,
+    // });
 
     try {
       const q = query(collection(db, 'packages'), orderBy('createdAt', 'asc'));
@@ -341,10 +341,10 @@ const LandingPagePackages = () => {
         ...doc.data(),
       }));
       setPackages(data);
-      Swal.close();
+    //   Swal.close();
     } catch (error) {
       console.error('Error fetching packages:', error);
-      Swal.fire('Cosmic Anomaly!', 'Failed to retrieve packages. Please try again later.', 'error');
+    //   Swal.fire('Cosmic Anomaly!', 'Failed to retrieve packages. Please try again later.', 'error');
     } finally {
       setLoading(false);
     }
