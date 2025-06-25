@@ -287,7 +287,7 @@ const Footer = () => {
           <FooterLink theme={theme === true ? 'light' : 'dark'} onClick={()=>navigate("/contactus")}>Contact us</FooterLink>
         </FooterLinks>
         <SocialIcons theme={theme === true ? 'light' : 'dark'}>
-          <a href="https://www.facebook.com/munirudeen.abdulqaudir?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/share/1Fvua9o7At/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
             <FaFacebook />
           </a>
           <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">

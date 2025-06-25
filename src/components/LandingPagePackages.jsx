@@ -203,13 +203,31 @@ const CardTitle = styled.h3`
   `}
 `;
 
+
+
+// const CardDescription = styled.p`
+//   // color: ${spaceThemeColors.secondaryText};
+//   font-size: 1rem;
+//   margin-bottom: 10px;
+//   text-align: center;
+//   flex-grow: 1; /* Allow description to take available space */
+//   color:yellow;
+// `;
+
+
+
 const CardDescription = styled.p`
-  color: ${spaceThemeColors.secondaryText};
-  font-size: 1rem;
-  margin-bottom: 0rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
   text-align: center;
-  flex-grow: 1; /* Allow description to take available space */
+  // flex-grow: 1;
+  color: yellow;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  font-style:italic;
 `;
+
 
 const FeatureList = styled.ul`
   list-style: none;
@@ -359,7 +377,7 @@ const LandingPagePackages = () => {
       {generateStars(100)} {/* Generate 100 stars */}
       <ContentWrapper>
         <HeaderContainer>
-          <Title>Explore Our Cosmic Packages</Title>
+          <Title>Explore Our Cosmic Social Media Packages</Title>
           <Subtitle>
             Embark on an interstellar journey with our meticulously crafted packages.
             Choose the plan that propels you to new heights!
