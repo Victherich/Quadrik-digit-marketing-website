@@ -9,7 +9,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 // --- Themed Colors for Outer Space Aesthetic ---
 const spaceThemeColors = {
   mainBackground: '#0D0E1F', // Deep, dark space background
-  cardBackground: 'rgba(25, 27, 48, 0.85)', // Slightly translucent dark card
+  cardBackground: 'rgba(40, 44, 78, 0.85)', // Slightly translucent dark card
   cardBorder: 'rgba(50, 55, 90, 0.6)', // Subtle border for cards
   mainText: '#E0E6F6', // Light, legible text for cosmic feel
   secondaryText: '#BCC2D9', // Slightly muted text
