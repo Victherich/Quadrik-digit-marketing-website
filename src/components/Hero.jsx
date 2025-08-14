@@ -183,9 +183,9 @@ const Hero = () => {
   return (
     <HeroContainer ref={sliderRef}>
       <HeroContent>
-        <HeroTitle isVisible={isVisible}>QUADRIK DIGIT MARKETING [QDM]</HeroTitle>
+        <HeroTitle isVisible={isVisible}>QAUDRIK DIGIT MARKETING [QDM]</HeroTitle>
         <HeroSubtitle isVisible={isVisible}>
-          Your Brand, Our Strength, Real Growth
+          Your Brand, Our Strategy, Real Growth
         </HeroSubtitle>
       </HeroContent>
       <Slider

@@ -272,7 +272,7 @@ const Footer = () => {
         <FooterDescription>
         <ContactWrap>
           <p><strong>Address:</strong> Royal Class Dip 1 Dubai, UAE.</p>
-          <p><strong>Email:</strong> qm@qaudrikdigitmarketing.com</p>
+          <p><strong>Email:</strong> qaudrikdigitmarketing@gmail.com</p>
           <p><strong>Phone:</strong> +971528895565, +971586805073</p>
         </ContactWrap>
         </FooterDescription>

@@ -501,7 +501,7 @@ const theme = useSelector((state)=>state.theme)
           </IconWrapper>
           <Title theme={theme === true ? 'light' : 'dark'}>QDM</Title>
           <Text>
-           Quadirk Digit Marketing is a creative digital agency based in the UAE, helping businesses grow through smart strategies and impactful designs. We specialize in social media management, content creation, digital ads, branding, and web development.
+           Qaudirk Digit Marketing is a creative digital agency based in the UAE, helping businesses grow through smart strategies and impactful designs. We specialize in social media management, content creation, digital ads, branding, and web development.
           </Text>
         </Column>
 

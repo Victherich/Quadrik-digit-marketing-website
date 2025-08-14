@@ -597,14 +597,14 @@ const AboutUs = () => {
   return (
     <AboutContainer theme={theme === true ? 'light' : 'dark'}>
       <HeroSection style={{ backgroundImage: `url(${heroImage})` }}>
-        <HeroTitle>About Quadrik Digit Marketing</HeroTitle>
+        <HeroTitle>About Qaudrik Digit Marketing</HeroTitle>
       </HeroSection>
 
       <Section>
         <ContentColumn>
           <SectionTitle theme={theme === true ? 'light' : 'dark'}>Who We Are</SectionTitle>
           <Text theme={theme === true ? 'light' : 'dark'}>
-             Quadrik Digit Marketing  is a dynamic and creative  digital agency based in the UAE . We are passionate about helping businesses like yours thrive in the ever-evolving digital landscape. Our approach combines  smart strategies  with  impactful designs  to deliver real, measurable growth.
+             Qaudrik Digit Marketing  is a dynamic and creative  digital agency based in the UAE . We are passionate about helping businesses like yours thrive in the ever-evolving digital landscape. Our approach combines  smart strategies  with  impactful designs  to deliver real, measurable growth.
           </Text>
           <IconWrapper theme={theme === true ? 'light' : 'dark'}>
             <FaBullhorn title="Digital Marketing" />
