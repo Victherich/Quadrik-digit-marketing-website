@@ -39,13 +39,13 @@ const LandingPage = () => {
 
       <Hero/>
       <AboutUsPreview/>
-      <LandingPagePackages/>
+      
       <CoreOfferingsPage/>
       <Hero3/>
       <CarShowroomPage/>
       <AutoTrendingSummary/>
       <WhyPartnerWithUs/>
-
+<LandingPagePackages/>
 <IndustriesWeServe/>
 
     </div>
